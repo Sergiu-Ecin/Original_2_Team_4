@@ -103,14 +103,14 @@ public class Player_Controller : MonoBehaviour
          new Ray(transform.position + (transform.right * 0.2f) + (Vector3.up * 0.01f),Vector3.down),
          new Ray(transform.position + (-transform.right * 0.2f) + (Vector3.up * 0.01f), Vector3.down)
         };
-        for(int i = 0; i<rays.Length; i++)
+        for (int i = 0; i < rays.Length; i++)
         {
-         if(Physics.Raycast(rays[i], 0.1f, groundLayerMask))
-         {
-             return true;
-         }
+            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            {
+                return true;
+            }
         }
-         return false;
+        return false;
     }
 
 
