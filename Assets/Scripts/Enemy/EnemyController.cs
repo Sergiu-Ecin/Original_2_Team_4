@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour
     {
         waypointIndex++;
         target = WayPointManager.points[waypointIndex];
+        transform.LookAt(WayPointManager.points[waypointIndex]);
 
         if (waypointIndex >= WayPointManager.points.Length - 1)
         {
