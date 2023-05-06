@@ -1,23 +1,33 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] float speed;
+    Player_Controller pl;
 
+
+    [Header("Move")]
+    [SerializeField] float speed;
     Transform target;
-    int waypointIndex = 0;
+    int waypointIndex;
+
+    [Header("Cannon")]
+    [SerializeField] Transform Fire;
+    [SerializeField] GameObject Proiettile, Cannone;
+    [SerializeField] float fwdVelocity, upVelocity;
+    float timer;
 
     private void Start()
     {
+        pl = FindObjectOfType<Player_Controller>();
         target = WayPointManager.points[0];
     }
 
     private void Update()
     {
         MoveEnemy();
+        Cannon();
     }
 
     void MoveEnemy()
@@ -41,6 +51,20 @@ public class EnemyController : MonoBehaviour
         {
             target = WayPointManager.points[0];
             waypointIndex = 0;
+        }
+    }
+
+
+    void Cannon()
+    {
+        Cannone.transform.LookAt(Player_Controller.playerVect + Vector3.up * 10f);
+
+        timer += Time.deltaTime;
+        if (timer >= Random.Range(2, 5))
+        {
+            var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
+            proiettile.GetComponent<Rigidbody>().velocity = Fire.up * upVelocity + Fire.forward * fwdVelocity; 
+            timer = 0;
         }
     }
 }

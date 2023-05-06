@@ -20,18 +20,21 @@ public class Player_Controller : MonoBehaviour
     public float jumpForce;
     public LayerMask groundLayerMask;
 
+    public static Vector3 playerVect;
+
     // Start is called before the first frame update
     public void Start()
     {
         // lock the cursor at the start of the game
         Cursor.lockState = CursorLockMode.Locked;
+        
 
     }
 
     // Update is called once per frame
     public void Update()
     {
-
+        playerVect = transform.position;
     }
 
     // called when we move our mouse - managed by the Input System

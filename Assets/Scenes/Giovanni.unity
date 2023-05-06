@@ -204,6 +204,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1420582530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &194345438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82899f6287d368f43a460bcf71c0dad8,
+    type: 3}
+  m_PrefabInstance: {fileID: 267315054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &194345440
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194345438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &267315054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,10 +286,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8439973313232946217, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -8436417856579922957, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -8114431196990759967, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -4410187909732962376, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -2147642314998828177, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -2058655178523251307, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -1507852163696174410, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: -590845900750669500, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
+    - target: {fileID: 676617562862410463, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82899f6287d368f43a460bcf71c0dad8,
         type: 3}
       propertyPath: m_Name
       value: FortV1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669928472587321697, guid: 82899f6287d368f43a460bcf71c0dad8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fortezza
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82899f6287d368f43a460bcf71c0dad8, type: 3}
@@ -395,7 +470,7 @@ GameObject:
   - component: {fileID: 281201987}
   m_Layer: 4
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Fortezza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,7 +719,7 @@ MeshCollider:
   m_GameObject: {fileID: 459570637}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -799,7 +874,7 @@ GameObject:
   - component: {fileID: 589130693}
   m_Layer: 0
   m_Name: PolyShape
-  m_TagString: Untagged
+  m_TagString: Fortezza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2018,7 +2093,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52432
+  m_Name: pb_Mesh28074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

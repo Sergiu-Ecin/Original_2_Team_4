@@ -27,7 +27,7 @@ public class WayPointManager : MonoBehaviour
         foreach (Transform t in transform)
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(t.position, 5f);
+            Gizmos.DrawWireSphere(t.position, 1.5f);
         }
 
         Gizmos.color = Color.red;
