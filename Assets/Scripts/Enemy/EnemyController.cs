@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    Player_Controller pl;
-
-
     [Header("Move")]
     [SerializeField] float speed;
     Transform target;
@@ -20,7 +17,6 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        pl = FindObjectOfType<Player_Controller>();
         target = WayPointManager.points[0];
     }
 
