@@ -58,8 +58,6 @@ public class Player_Controller : MonoBehaviour
             cameraContainer.gameObject.SetActive(true);
 
         }
-
-            
     }
 
     public void CameraLook()
@@ -90,10 +88,12 @@ public class Player_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (Turret_Controller.attivo == false)
         {
-          Move();
+            Move();
         }
+
     }
     void Move()
     {

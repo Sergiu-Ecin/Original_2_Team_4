@@ -59,7 +59,8 @@ public class EnemyController : MonoBehaviour
         if (timer >= Random.Range(2, 5))
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
-            proiettile.GetComponent<Rigidbody>().velocity = Fire.up * upVelocity + Fire.forward * fwdVelocity; 
+            // proiettile.GetComponent<Rigidbody>().velocity = Fire.up * upVelocity + Fire.forward * fwdVelocity; 
+           // proiettile.transform.Translate(Fire.up * upVelocity + Fire.forward * fwdVelocity);
             timer = 0;
         }
     }

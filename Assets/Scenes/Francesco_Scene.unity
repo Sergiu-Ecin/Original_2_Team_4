@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -126,6 +126,12 @@ NavMeshSettings:
 --- !u!4 &29358949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7396016875054131516, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1647239147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &912671377 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 194794329, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
     type: 3}
   m_PrefabInstance: {fileID: 1647239147}
   m_PrefabAsset: {fileID: 0}
@@ -414,6 +420,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &1494674279 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7301374628758125956, guid: 12d32d238ffce084e893168a4bd3e2de,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301374629252370065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1647239147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -458,6 +470,18 @@ PrefabInstance:
       propertyPath: sensibilitaMouse
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 415611370, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
+      propertyPath: cameras.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 415611370, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
+      propertyPath: cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 1494674279}
+    - target: {fileID: 415611370, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
+      propertyPath: cameras.Array.data[1]
+      value: 
+      objectReference: {fileID: 912671377}
     - target: {fileID: 2741018407728999841, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
         type: 3}
       propertyPath: m_Mesh
