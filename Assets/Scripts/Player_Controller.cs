@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,11 @@ public class Player_Controller : MonoBehaviour
     public LayerMask groundLayerMask;
 
     public static Vector3 playerVect;
+
+   
+  
+
+
 
     // Start is called before the first frame update
     public void Start()
@@ -45,7 +51,15 @@ public class Player_Controller : MonoBehaviour
 
     public void LateUpdate()
     {
-        CameraLook();
+        if (Turret_Controller.attivo == false)
+        {
+
+            CameraLook();
+            cameraContainer.gameObject.SetActive(true);
+
+        }
+
+            
     }
 
     public void CameraLook()
@@ -76,7 +90,10 @@ public class Player_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (Turret_Controller.attivo == false)
+        {
+          Move();
+        }
     }
     void Move()
     {
