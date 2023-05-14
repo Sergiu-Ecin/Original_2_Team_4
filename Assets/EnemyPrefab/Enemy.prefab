@@ -432,8 +432,7 @@ MonoBehaviour:
   Proiettile: {fileID: 8392502341436358615, guid: 25e66dd3cf5c6b34396a06abc7d6c0a0,
     type: 3}
   Cannone: {fileID: 947144842046271214}
-  fwdVelocity: 15
-  upVelocity: 15
+  timeShoot: 7
 --- !u!136 &5160113854117362804
 CapsuleCollider:
   m_ObjectHideFlags: 0

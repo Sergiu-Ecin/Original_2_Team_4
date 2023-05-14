@@ -6,53 +6,50 @@ using UnityEngine.Rendering.Universal;
 public class PallaDiCannone : MonoBehaviour
 {
     bool dir_ = false;
-
-    void Start()
-    {
-
-    }
+    float parabola = 5;
+    float timer, timerParabola;
+    bool stopLoock;
 
     void Update()
     {
         Caduta();
     }
 
-    float timer;
-    bool stopLook;
     private void Caduta()
     {
         GameObject playerRef = GameObject.FindGameObjectWithTag("Player");
         float distanzaMinima = Mathf.Infinity;
         float dist = Vector3.Distance(transform.position, playerRef.transform.position);
+        Vector3 dir = transform.position - playerRef.transform.position;
 
 
-        if (dir_ == false)
+
+        transform.Translate((Vector3.up * parabola + Vector3.forward * 5) * Time.deltaTime);
+
+        if(dir_ == true)
         {
-            transform.Translate((Vector3.up * 5 + Vector3.forward * 20) * Time.deltaTime);
-        }
-        else
-        {
-            if (stopLook == false)
+            parabola -= timerParabola * Time.deltaTime;
+            if (stopLoock == false)
                 transform.LookAt(playerRef.transform.position);
-
-            transform.Translate((Vector3.up * -5 + Vector3.forward * 20) * Time.deltaTime);
         }
 
 
         if (dist < distanzaMinima)
         {
-            if (transform.position.y > playerRef.transform.position.y * 3)
+            if (transform.position.y > playerRef.transform.position.y * 3.5f)
+            {
                 dir_ = true;
-
+                timerParabola = 1;
+            }
+            else if (transform.position.y < playerRef.transform.position.y * 3 && dir_ == true)
+            {
+                stopLoock = true;
+            }
+            else if (transform.position.y < playerRef.transform.position.y * 2 && dir_ == true)
+            {
+                timerParabola = 1.5f;
+            }
         }
-        if (transform.position.y < 15 && dir_ == true)
-        {
-            stopLook = true;
-        }
-
-        timer += Time.deltaTime;
-        if (timer > 10)
-            Destroy(gameObject);
 
     }
 
@@ -68,7 +65,6 @@ public class PallaDiCannone : MonoBehaviour
         if (other.gameObject.tag == "Fortezza")
         {
             Destroy(gameObject);
-            Debug.Log("Colpito");
         }
     }
 
