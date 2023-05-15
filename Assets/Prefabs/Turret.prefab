@@ -399,6 +399,7 @@ MonoBehaviour:
   fwdVelocity: 30
   upVelocity: 0
   timer: 0.5
+  danno: 5
   cameras:
   - {fileID: 1831371244837982318}
 --- !u!1 &4206176642320457240

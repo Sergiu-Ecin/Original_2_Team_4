@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header("Move")]
+
+
+    [Header("Stats")]
+    [SerializeField] float Hp;
     [SerializeField] float speed;
+    [SerializeField] float moneyDrop;
     Transform target;
     int waypointIndex;
 
@@ -14,6 +18,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject Proiettile, Cannone;
     [SerializeField] float timeShoot;
     float timer;
+
+
 
     private void Start()
     {
@@ -24,6 +30,7 @@ public class EnemyController : MonoBehaviour
     {
         MoveEnemy();
         Cannon();
+        Vita();
     }
 
     void MoveEnemy()
@@ -60,9 +67,29 @@ public class EnemyController : MonoBehaviour
         if (timer >= timeShoot)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
-            // proiettile.GetComponent<Rigidbody>().velocity = Fire.up * upVelocity + Fire.forward * fwdVelocity; 
-            // proiettile.transform.Translate(Fire.up * upVelocity + Fire.forward * fwdVelocity);
             timer = 0;
+        }
+    }
+
+
+    void Vita()
+    {
+        if (Hp <= 0)
+        {
+            WaveManager.enemyCount--;
+            Player_Controller.moneyCount += moneyDrop;
+            Destroy(gameObject);
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "BulletPlayer")
+        {
+            Hp -= Turret_Controller.takeDanno;
+            Destroy(other.gameObject);
+            Debug.Log("Hp " + Hp);
         }
     }
 }

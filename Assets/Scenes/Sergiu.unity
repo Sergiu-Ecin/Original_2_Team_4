@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-69752
+  m_Name: pb_Mesh-61840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -402,12 +402,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!4 &579903887 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2360508777504063776, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1376215344}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1276067093
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,22 +506,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 415611370, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
-      propertyPath: VerticalAxis
-      value: 
-      objectReference: {fileID: 579903887}
-    - target: {fileID: 415611370, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
-      propertyPath: HorizontalAxis
-      value: 
-      objectReference: {fileID: 1598370380}
-    - target: {fileID: 415611371, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 415611371, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     - target: {fileID: 2741018407728999841, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
         type: 3}
       propertyPath: m_Mesh
@@ -536,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 2741018407728999841, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 400
+      value: 403
       objectReference: {fileID: 0}
     - target: {fileID: 3355065632722940809, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
         type: 3}
@@ -610,9 +588,3 @@ PrefabInstance:
       objectReference: {fileID: 76083547}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e34ee62c5f3d6042b2aeb595a30c05e, type: 3}
---- !u!4 &1598370380 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7396016875054131516, guid: 2e34ee62c5f3d6042b2aeb595a30c05e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1376215344}
-  m_PrefabAsset: {fileID: 0}

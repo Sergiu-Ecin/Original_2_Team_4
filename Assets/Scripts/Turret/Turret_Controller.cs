@@ -21,6 +21,12 @@ public class Turret_Controller : MonoBehaviour
     [Range(0.0f, 5f)] public float timer;
     float timeElapsed = 10f;
 
+    [Header("Danno")]
+    [SerializeField] float danno;
+    public static float takeDanno;
+
+
+
     public Camera[] cameras;
     private int currentCameraIndex = 0;
 
@@ -39,6 +45,8 @@ public class Turret_Controller : MonoBehaviour
         {
             cameras[i].gameObject.SetActive(false);
         }
+
+        takeDanno = danno;
     }
 
     public void Update()
@@ -52,12 +60,12 @@ public class Turret_Controller : MonoBehaviour
          HorizontalAxis.transform.Rotate(0f, mouseX, 0f);
          VerticalAxis.transform.Rotate(-mouseY, 0f, 0f);
 
-         Camera.main.transform.Rotate((-mouseY / 45), 0f, 0f);
+        // Camera.main.transform.Rotate((-mouseY / 45), 0f, 0f);
 
             timeElapsed += Time.deltaTime;
             if (timeElapsed >= timer)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                if (Input.GetKeyDown(KeyCode.L))
                 {
                     Shoot();
                 }

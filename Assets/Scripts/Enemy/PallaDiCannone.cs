@@ -5,10 +5,14 @@ using UnityEngine.Rendering.Universal;
 
 public class PallaDiCannone : MonoBehaviour
 {
-    bool dir_ = false;
+    bool dir_, stopLoock;
     float parabola = 5;
-    float timer, timerParabola;
-    bool stopLoock;
+    float timerParabola;
+
+    [Header("+precisione-")]
+    [SerializeField]
+    [Range(2, 3)]
+    float precisione;
 
     void Update()
     {
@@ -20,13 +24,12 @@ public class PallaDiCannone : MonoBehaviour
         GameObject playerRef = GameObject.FindGameObjectWithTag("Player");
         float distanzaMinima = Mathf.Infinity;
         float dist = Vector3.Distance(transform.position, playerRef.transform.position);
-        Vector3 dir = transform.position - playerRef.transform.position;
 
 
 
         transform.Translate((Vector3.up * parabola + Vector3.forward * 5) * Time.deltaTime);
 
-        if(dir_ == true)
+        if (dir_ == true)
         {
             parabola -= timerParabola * Time.deltaTime;
             if (stopLoock == false)
@@ -41,16 +44,15 @@ public class PallaDiCannone : MonoBehaviour
                 dir_ = true;
                 timerParabola = 1;
             }
-            else if (transform.position.y < playerRef.transform.position.y * 3 && dir_ == true)
+            else if (transform.position.y < playerRef.transform.position.y * precisione && dir_ == true)
             {
                 stopLoock = true;
             }
             else if (transform.position.y < playerRef.transform.position.y * 2 && dir_ == true)
             {
-                timerParabola = 1.5f;
+                timerParabola = 2f;
             }
         }
-
     }
 
 
