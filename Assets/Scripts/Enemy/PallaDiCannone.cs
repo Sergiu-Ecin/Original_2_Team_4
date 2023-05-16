@@ -6,52 +6,64 @@ using UnityEngine.Rendering.Universal;
 public class PallaDiCannone : MonoBehaviour
 {
     bool dir_, stopLoock;
-    float parabola = 5;
+    [HideInInspector] public float parabolaZ, parabolaY, dirY, dirZ;
+    float calcoloDisciesa;
     float timerParabola;
+    Vector3 playerRef;
 
-    [Header("+precisione-")]
-    [SerializeField]
-    [Range(2, 3)]
-    float precisione;
+    [HideInInspector] public float precisione;
+    private void Start()
+    {
+        playerRef = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        dirY = parabolaY;
+        dirZ = parabolaZ;
+        calcoloDisciesa = parabolaY / 2f;
+    }
 
     void Update()
     {
+
         Caduta();
     }
 
     private void Caduta()
     {
-        GameObject playerRef = GameObject.FindGameObjectWithTag("Player");
         float distanzaMinima = Mathf.Infinity;
-        float dist = Vector3.Distance(transform.position, playerRef.transform.position);
+        float dist = Vector3.Distance(transform.position, playerRef);
 
 
 
-        transform.Translate((Vector3.up * parabola + Vector3.forward * 5) * Time.deltaTime);
+        transform.Translate((Vector3.up * dirY + Vector3.forward * dirZ) * Time.deltaTime);
 
         if (dir_ == true)
         {
-            parabola -= timerParabola * Time.deltaTime;
+            dirY -= timerParabola * Time.deltaTime;
             if (stopLoock == false)
-                transform.LookAt(playerRef.transform.position);
+                transform.LookAt(playerRef);
         }
 
 
         if (dist < distanzaMinima)
         {
-            if (transform.position.y > playerRef.transform.position.y * 3.5f)
+            if (transform.position.y > playerRef.y * 3.5f)
             {
                 dir_ = true;
-                timerParabola = 1;
+                timerParabola = calcoloDisciesa;
             }
-            else if (transform.position.y < playerRef.transform.position.y * precisione && dir_ == true)
+            else if (transform.position.y < playerRef.y * precisione && dir_ == true)
             {
                 stopLoock = true;
             }
-            else if (transform.position.y < playerRef.transform.position.y * 2 && dir_ == true)
+            else if (transform.position.y < playerRef.y * 2 && dir_ == true)
             {
-                timerParabola = 2f;
+                timerParabola = calcoloDisciesa + 0.5f;
             }
+        }
+
+        if(-dirY < -parabolaY)
+        {
+            dirY = -parabolaY;
         }
     }
 

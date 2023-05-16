@@ -16,18 +16,28 @@ public class EnemyController : MonoBehaviour
     [Header("Cannon")]
     [SerializeField] Transform Fire;
     [SerializeField] GameObject Proiettile, Cannone;
-    [SerializeField] float timeShoot;
+    [SerializeField] float timeShoot, velocit‡Palla;
+    [Header("+precisione-")]
+    [SerializeField]
+    [Range(2f, 3f)]
+    float precisione;
     float timer;
 
 
 
     private void Start()
     {
+        
+
         target = SpawnerEnemy.points[0];
+       
+
     }
 
     private void Update()
     {
+
+
         MoveEnemy();
         Cannon();
         Vita();
@@ -67,6 +77,10 @@ public class EnemyController : MonoBehaviour
         if (timer >= timeShoot)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
+            PallaDiCannone pDC = proiettile.GetComponent<PallaDiCannone>();
+            pDC.parabolaY = velocit‡Palla;
+            pDC.parabolaZ = velocit‡Palla;
+            pDC.precisione = precisione;
             timer = 0;
         }
     }

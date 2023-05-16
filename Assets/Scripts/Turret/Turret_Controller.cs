@@ -55,17 +55,17 @@ public class Turret_Controller : MonoBehaviour
         if (attivo == true)
         {
 
-         mouseX = Input.GetAxis("Mouse X") * sensibilitaMouse;
-         mouseY = Input.GetAxis("Mouse Y") * sensibilitaMouse;
-         HorizontalAxis.transform.Rotate(0f, mouseX, 0f);
-         VerticalAxis.transform.Rotate(-mouseY, 0f, 0f);
+            mouseX = Input.GetAxis("Mouse X") * sensibilitaMouse;
+            mouseY = Input.GetAxis("Mouse Y") * sensibilitaMouse;
+            HorizontalAxis.transform.Rotate(0f, mouseX, 0f);
+            VerticalAxis.transform.Rotate(-mouseY, 0f, 0f);
 
-        // Camera.main.transform.Rotate((-mouseY / 45), 0f, 0f);
+            // Camera.main.transform.Rotate((-mouseY / 45), 0f, 0f);
 
             timeElapsed += Time.deltaTime;
             if (timeElapsed >= timer)
             {
-                if (Input.GetKeyDown(KeyCode.L))
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     Shoot();
                 }
@@ -75,7 +75,7 @@ public class Turret_Controller : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Player" && Input.GetKey(KeyCode.F))
+        if (other.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.F) && attivo == false)
         {
             Debug.Log("Il player ha interagito con la torretta.");
 
@@ -97,8 +97,7 @@ public class Turret_Controller : MonoBehaviour
             // Attiva la nuova camera corrente
             cameras[currentCameraIndex].gameObject.SetActive(true);
         }
-
-        if (Input.GetKey(KeyCode.G))
+        else if (Input.GetKeyDown(KeyCode.F) && attivo == true)
         {
             Debug.Log("Il player ha interagito con la torretta.");
 
