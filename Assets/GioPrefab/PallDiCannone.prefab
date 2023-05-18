@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 91190610729870849}
   m_Layer: 0
   m_Name: PallDiCannone
-  m_TagString: Untagged
+  m_TagString: EnemyAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,4 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd884aa19d82814e991b778c4cbde51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parabolaZ: 0
+  parabolaY: 0
+  dirY: 0
+  dirZ: 0
   precisione: 2

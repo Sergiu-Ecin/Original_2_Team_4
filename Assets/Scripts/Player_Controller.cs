@@ -27,7 +27,7 @@ public class Player_Controller : MonoBehaviour
     [Header("shop")]
     [SerializeField] public float money;
 
-
+    [SerializeField] GameObject Respawn;
 
     public void Start()
     {
@@ -44,7 +44,6 @@ public class Player_Controller : MonoBehaviour
 
         
 
-        Debug.Log("Danari " + money);
     }
 
     // called when we move our mouse - managed by the Input System
@@ -166,5 +165,15 @@ public class Player_Controller : MonoBehaviour
         Gizmos.DrawRay(transform.position + (-transform.forward * 0.2f), Vector3.down);
         Gizmos.DrawRay(transform.position + (transform.right * 0.2f), Vector3.down);
         Gizmos.DrawRay(transform.position + (-transform.right * 0.2f), Vector3.down);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "EnemyAmmo" && Turret_Controller.attivo == false) 
+        {
+            transform.position = Respawn.transform.position;
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -71,11 +71,6 @@ public class PallaDiCannone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-            Debug.Log("Colpito00");
-        }
         if (other.gameObject.tag == "Fortezza")
         {
             Destroy(gameObject);

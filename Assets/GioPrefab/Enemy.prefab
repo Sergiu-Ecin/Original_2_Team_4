@@ -437,7 +437,7 @@ MonoBehaviour:
   Cannone: {fileID: 947144842046271214}
   timeShoot: 3
   "velocit\xE0Palla": 15
-  precisione: 3
+  precisione: 2
 --- !u!65 &8052970409480511679
 BoxCollider:
   m_ObjectHideFlags: 0

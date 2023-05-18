@@ -47,6 +47,7 @@ public class Turret_Controller : MonoBehaviour
         }
 
         takeDanno = danno;
+
     }
 
     public void Update()
@@ -75,13 +76,11 @@ public class Turret_Controller : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Player" && Input.GetKeyDown(KeyCode.F) && attivo == false)
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F) && attivo == false)
         {
-            Debug.Log("Il player ha interagito con la torretta.");
 
             attivo = true;
 
-            Debug.Log(attivo);
 
             cameras[currentCameraIndex].gameObject.SetActive(false);
 
@@ -99,11 +98,9 @@ public class Turret_Controller : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F) && attivo == true)
         {
-            Debug.Log("Il player ha interagito con la torretta.");
 
             attivo = false;
 
-            Debug.Log(attivo);
 
             cameras[currentCameraIndex].gameObject.SetActive(false);
 

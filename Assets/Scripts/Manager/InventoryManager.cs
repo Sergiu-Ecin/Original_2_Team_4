@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static List<GameObject> Artefatti = new List<GameObject>();
-    public static List<GameObject> Torrette = new List<GameObject>();
+    public List<GameObject> Artefatti = new List<GameObject>();
+    public List<GameObject> Torrette = new List<GameObject>();
 
+
+    [SerializeField] GameObject Artefatto;
+    [SerializeField] GameObject GridArtefatto;
+
+
+    [SerializeField] public int countArt;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
+
+    public void AddArtefatto()
+    {
+       var art = Instantiate(Artefatto, GridArtefatto.transform);
+        art.name = "Artefatto";
+    }
 
 }

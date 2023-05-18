@@ -1,55 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Artefatti : MonoBehaviour
 {
     Player_Controller pC;
+    InventoryManager iM;
 
     [SerializeField] float costo;
+
+    [Tooltip("Scrivi una descrizione per l'artefatto")]
+    [SerializeField] string artefatto;
+
+    [SerializeField] GameObject textArtefatto;
+    [SerializeField] TextMeshProUGUI DesArtefatto;
+
     bool wait;
+    
     void Start()
     {
         pC = FindObjectOfType<Player_Controller>();
+        iM = FindObjectOfType<InventoryManager>();
     }
 
     void Update()
     {
         transform.Rotate(0, 2, 0);
 
+        Timer();
         Descrizione();
     }
 
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && pC.money >= costo && wait == false)
+        if (other.gameObject.tag == "Player" && pC.money >= costo && wait == false && iM.countArt > 0 && timer == false)
         {
-            InventoryManager.Artefatti.Add(gameObject);
+            iM.Artefatti.Add(gameObject);
             pC.money -= costo;
-            Debug.Log(InventoryManager.Artefatti);
+            iM.AddArtefatto();
+            iM.countArt--;
+            timer = true;
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    float time;
+    bool timer;
+    void Timer()
     {
-        if (other.gameObject.tag == "Player")
+        if(timer == true)
         {
-            wait = true;
+            time += Time.deltaTime;
+            if(time >= 1)
+            {
+                time = 0;
+                timer = false;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            wait = false;
-        }
-    }
 
 
     void Descrizione()
     {
+        DesArtefatto.text = artefatto + costo;
 
         RaycastHit hit;
 
@@ -60,8 +76,11 @@ public class Artefatti : MonoBehaviour
             if (hit.transform != null)
             {
                 if (hit.collider.name == "Artefatto")
-                    Debug.Log("Artefatto costo: " + costo);
+                    textArtefatto.SetActive(true);
+                else
+                    textArtefatto.SetActive(false);
             }
+
         }
 
     }
