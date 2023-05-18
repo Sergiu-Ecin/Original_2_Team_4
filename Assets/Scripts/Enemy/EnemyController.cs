@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
+    [SerializeField] int loop;
     Transform target;
     int waypointIndex;
 
@@ -23,15 +24,15 @@ public class EnemyController : MonoBehaviour
     float precisione;
     float timer;
 
-
+    Player_Controller pC;
 
     private void Start()
     {
-        
+
 
         target = SpawnerEnemy.points[0];
-       
 
+        pC = FindObjectOfType<Player_Controller>();
     }
 
     private void Update()
@@ -63,8 +64,8 @@ public class EnemyController : MonoBehaviour
 
         if (waypointIndex >= SpawnerEnemy.points.Length - 1)
         {
-            target = SpawnerEnemy.points[0];
-            waypointIndex = 0;
+            target = SpawnerEnemy.points[loop];
+            waypointIndex = loop;
         }
     }
 
@@ -74,7 +75,7 @@ public class EnemyController : MonoBehaviour
         Cannone.transform.LookAt(Player_Controller.playerVect + Vector3.up * 10f);
 
         timer += Time.deltaTime;
-        if (timer >= timeShoot)
+        if (timer >= timeShoot && waypointIndex >= loop)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
             PallaDiCannone pDC = proiettile.GetComponent<PallaDiCannone>();
@@ -91,7 +92,7 @@ public class EnemyController : MonoBehaviour
         if (Hp <= 0)
         {
             WaveManager.enemyCount--;
-            Player_Controller.moneyCount += moneyDrop;
+            pC.money += moneyDrop;
             Destroy(gameObject);
         }
     }

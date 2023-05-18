@@ -49,7 +49,7 @@ public class SpawnerEnemy : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
 
         foreach (Transform t in transform)

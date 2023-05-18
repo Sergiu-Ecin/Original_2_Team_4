@@ -25,8 +25,7 @@ public class Player_Controller : MonoBehaviour
 
 
     [Header("shop")]
-    [SerializeField] float money;
-    public static float moneyCount;
+    [SerializeField] public float money;
 
 
 
@@ -35,14 +34,15 @@ public class Player_Controller : MonoBehaviour
         // lock the cursor at the start of the game
         Cursor.lockState = CursorLockMode.Locked;
 
-       
+
     }
 
     public void Update()
     {
         playerVect = transform.position;
 
-        money = moneyCount;
+
+        
 
         Debug.Log("Danari " + money);
     }

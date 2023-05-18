@@ -428,8 +428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 10
-  speed: 10
+  speed: 20
   moneyDrop: 5
+  loop: 11
   Fire: {fileID: 7533633912214356916}
   Proiettile: {fileID: 8392502341436358615, guid: 25e66dd3cf5c6b34396a06abc7d6c0a0,
     type: 3}
