@@ -1087,6 +1087,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.459
       objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: danno
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: timer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: fwdVelocity
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4757617980343090693, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1100,7 +1115,7 @@ PrefabInstance:
     - target: {fileID: 6767185846197254246, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.0000002384186
       objectReference: {fileID: 0}
     - target: {fileID: 6767185846197254246, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -1110,7 +1125,7 @@ PrefabInstance:
     - target: {fileID: 6767185846197254246, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.54
+      value: -0.96000046
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aabc8ed01b1edc4da45fa07ee695035, type: 3}

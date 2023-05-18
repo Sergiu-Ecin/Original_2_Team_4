@@ -259,6 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costo: 10
-  artefatto: "\xE9 un arteffatto con una icona placeholder"
+  artefatto: "\xE9 un arteffatto con una icona placeholder "
   textArtefatto: {fileID: 0}
   DesArtefatto: {fileID: 0}
