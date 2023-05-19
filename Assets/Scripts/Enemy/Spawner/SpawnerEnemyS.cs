@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerEnemy : MonoBehaviour
+public class SpawnerEnemyS : MonoBehaviour
 {
     float timer;
-
+    [SerializeField] int loop;
     [SerializeField] GameObject Enemy;
-    public static Transform[] points;
+    public static Transform[] pointsS;
 
     private void Awake()
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        pointsS = new Transform[transform.childCount];
+        for (int i = 0; i < pointsS.Length; i++)
         {
-            points[i] = transform.GetChild(i);
+            pointsS[i] = transform.GetChild(i);
 
-            if (i > points.Length)
+            if (i > pointsS.Length)
             {
                 i = 0;
             }
@@ -44,6 +44,13 @@ public class SpawnerEnemy : MonoBehaviour
         {
             GameObject pos = Instantiate(Enemy);
             pos.transform.position = transform.position;
+            EnemyController ec = pos.GetComponent<EnemyController>();
+            if (ec != null)
+            {
+                ec.sud = true;
+                ec.loop = loop;
+            }
+
             timer = 0;
             WaveManager.countEnemySpawn--;
         }
@@ -54,19 +61,16 @@ public class SpawnerEnemy : MonoBehaviour
 
         foreach (Transform t in transform)
         {
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(t.position, 1.5f);
         }
 
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
         for (int i = 0; i < transform.childCount - 1; i++)
         {
             Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
         }
 
-        //Gizmos.DrawLine(transform.GetChild(transform.childCount - 1).position, transform.GetChild(0).position);
+        Gizmos.DrawLine(transform.GetChild(transform.childCount - 1).position, transform.GetChild(loop).position);
     }
-
-
-
 }

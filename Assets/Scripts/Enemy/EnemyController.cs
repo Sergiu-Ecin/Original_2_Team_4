@@ -10,7 +10,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
-    [SerializeField] int loop;
+    [HideInInspector] public int loop;
+    int shoot;
     Transform target;
     int waypointIndex;
 
@@ -26,19 +27,40 @@ public class EnemyController : MonoBehaviour
 
     Player_Controller pC;
 
+    [HideInInspector] public bool nord, sud, est, ovest;
     private void Start()
     {
+        if (nord == true)
+        {
+            target = SpawnerEnemyN.pointsN[0];
 
+        }
+        if (ovest == true)
+        {
+            target = SpawnerEnemyO.pointsO[0];
 
-        target = SpawnerEnemy.points[0];
+        }
+        if (sud == true)
+        {
+            target = SpawnerEnemyS.pointsS[0];
 
+        }
+        if (est == true)
+        {
+            target = SpawnerEnemyE.pointsE[0];
+
+        }
+
+        shoot = loop;
+        shoot -= 2;
         pC = FindObjectOfType<Player_Controller>();
     }
 
     private void Update()
     {
 
-
+        Debug.Log(target);
+        Debug.Log(waypointIndex);
         MoveEnemy();
         Cannon();
         Vita();
@@ -48,23 +70,76 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        transform.LookAt(SpawnerEnemy.points[waypointIndex]);
+
+        if (ovest == true)
+            transform.LookAt(SpawnerEnemyO.pointsO[waypointIndex]);
+        if (nord == true)
+            transform.LookAt(SpawnerEnemyN.pointsN[waypointIndex]);
+        if (sud == true)
+            transform.LookAt(SpawnerEnemyS.pointsS[waypointIndex]);
+        if (est == true)
+            transform.LookAt(SpawnerEnemyE.pointsE[waypointIndex]);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
-            NextWayPoint();
+            if (ovest == true)
+                NextWayPointO();
+            if (nord == true)
+                NextWayPointN();
+            if (sud == true)
+                NextWayPointS();
+            if (est == true)
+                NextWayPointE();
         }
     }
 
-    private void NextWayPoint()
+    private void NextWayPointO()
     {
         waypointIndex++;
-        target = SpawnerEnemy.points[waypointIndex];
+        target = SpawnerEnemyO.pointsO[waypointIndex];
 
 
-        if (waypointIndex >= SpawnerEnemy.points.Length - 1)
+        if (waypointIndex >= SpawnerEnemyO.pointsO.Length - 1)
         {
-            target = SpawnerEnemy.points[loop];
+            target = SpawnerEnemyO.pointsO[loop];
+            waypointIndex = loop;
+        }
+    }
+    private void NextWayPointN()
+    {
+        waypointIndex++;
+        target = SpawnerEnemyN.pointsN[waypointIndex];
+
+
+        if (waypointIndex >= SpawnerEnemyN.pointsN.Length - 1)
+        {
+            target = SpawnerEnemyN.pointsN[loop];
+            waypointIndex = loop;
+        }
+    }
+
+    private void NextWayPointS()
+    {
+        waypointIndex++;
+        target = SpawnerEnemyS.pointsS[waypointIndex];
+
+
+        if (waypointIndex >= SpawnerEnemyS.pointsS.Length - 1)
+        {
+            target = SpawnerEnemyS.pointsS[loop];
+            waypointIndex = loop;
+        }
+    }
+
+    private void NextWayPointE()
+    {
+        waypointIndex++;
+        target = SpawnerEnemyE.pointsE[waypointIndex];
+
+
+        if (waypointIndex >= SpawnerEnemyE.pointsE.Length - 1)
+        {
+            target = SpawnerEnemyE.pointsE[loop];
             waypointIndex = loop;
         }
     }
@@ -75,7 +150,7 @@ public class EnemyController : MonoBehaviour
         Cannone.transform.LookAt(Player_Controller.playerVect + Vector3.up * 10f);
 
         timer += Time.deltaTime;
-        if (timer >= timeShoot && waypointIndex >= loop)
+        if (timer >= timeShoot && waypointIndex >= shoot)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
             PallaDiCannone pDC = proiettile.GetComponent<PallaDiCannone>();
