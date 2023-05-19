@@ -41,8 +41,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3647827807482355780}
-  - component: {fileID: 4433154494947752249}
   - component: {fileID: 654853434111105738}
+  - component: {fileID: 4433154494947752249}
   m_Layer: 0
   m_Name: Cannon Turret
   m_TagString: Untagged
@@ -66,6 +66,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &654853434111105738
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019197962260192235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4433154494947752249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,19 +104,7 @@ MonoBehaviour:
   cameras:
   - {fileID: 0}
   - {fileID: 1831371244837982318}
---- !u!135 &654853434111105738
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019197962260192235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!1 &5803322896685012106
 GameObject:
   m_ObjectHideFlags: 0

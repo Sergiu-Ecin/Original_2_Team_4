@@ -18,8 +18,13 @@ public class Player_Controller : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     private Vector2 curMovementInput;
+
     public float jumpForce;
     public LayerMask groundLayerMask;
+
+    public float smoothTime = 0.5f;
+    private bool isJumping = false;
+    private Vector3 currentVelocity;
 
     public static Vector3 playerVect;
 
@@ -138,7 +143,7 @@ public class Player_Controller : MonoBehaviour
 
 
 
-    // called when we press down on the spacebar - managed by the Input System
+    //called when we press down on the spacebar - managed by the Input System
     public void OnJumpInput(InputAction.CallbackContext context)
     {
         // is this the first frame we're pressing the button?
@@ -148,7 +153,8 @@ public class Player_Controller : MonoBehaviour
             if (IsGrounded())
             {
                 // add force updwards
-                rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                rig.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+                StartCoroutine(SmoothJump(rig));
             }
 
 
@@ -156,6 +162,36 @@ public class Player_Controller : MonoBehaviour
 
         }
     }
+
+    private IEnumerator SmoothJump(Rigidbody rb)
+    {
+        float elapsedTime = 0f;
+        bool isJumpingUp = true;
+
+        while (elapsedTime < smoothTime && isJumpingUp)
+        {
+            float jumpPercentage = elapsedTime / smoothTime;
+            float yOffset = Mathf.Lerp(0f, jumpForce, jumpPercentage);
+            rb.transform.Translate(Vector3.up * yOffset * Time.deltaTime);
+
+            // Check for collision with walls
+            RaycastHit hit;
+            float sphereRadius = GetComponent<Collider>().bounds.extents.x;
+            Vector3 sphereCenter = transform.position + Vector3.up * sphereRadius;
+            if (Physics.SphereCast(sphereCenter, sphereRadius, Vector3.right, out hit, 0.1f))
+            {
+                isJumpingUp = false;
+                break;
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isJumping = false;
+    }
+
+
 
     private void OnDrawGizmos()
     {
@@ -176,4 +212,6 @@ public class Player_Controller : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Turret_Controller : MonoBehaviour
+public class Catapult_Turret : MonoBehaviour
 {
     public float sensibilitaMouse = 2f;
     public Transform HorizontalAxis;
@@ -98,7 +98,7 @@ public class Turret_Controller : MonoBehaviour
 
 
             player.GetComponent<Player_Controller>().enabled = false;
-              
+
         }
         else if (Input.GetKeyDown(KeyCode.F) && attivo == true)
         {
@@ -133,5 +133,4 @@ public class Turret_Controller : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = Muzzle.forward * fwdVelocity;
         timeElapsed = 0;
     }
-
 }
