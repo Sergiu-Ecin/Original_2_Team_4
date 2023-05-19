@@ -345,6 +345,10 @@ MonoBehaviour:
   timeShoot: 3
   "velocit\xE0Palla": 15
   precisione: 2
+  nord: 0
+  sud: 0
+  est: 0
+  ovest: 0
 --- !u!65 &3779351252116589009
 BoxCollider:
   m_ObjectHideFlags: 0
