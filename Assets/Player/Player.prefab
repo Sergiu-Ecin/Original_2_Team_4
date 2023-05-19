@@ -283,10 +283,11 @@ MonoBehaviour:
   camCurXRot: 0
   lookSensitivity: 0.2
   moveSpeed: 5
-  jumpForce: 60
+  jumpForce: 1
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 55
+  smoothTime: 0.5
   money: 100
   Respawn: {fileID: 0}
 --- !u!1 &7301374628758125954
