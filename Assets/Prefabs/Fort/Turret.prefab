@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 654853434111105738}
   - component: {fileID: 4433154494947752249}
   m_Layer: 0
-  m_Name: Cannon Turret
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
