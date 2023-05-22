@@ -95,7 +95,7 @@ MonoBehaviour:
   HorizontalAxis: {fileID: 6472585330365930557}
   VerticalAxis: {fileID: 4757617980343090693}
   Muzzle: {fileID: 6767185846197254246}
-  proiettile: {fileID: 3156401682819998491, guid: 0d118c8b10984f641aa79f01308b6b53,
+  proiettile: {fileID: 4982050621372715277, guid: 6c2acb9d67ae6a34692d9b43ac834176,
     type: 3}
   fwdVelocity: 45
   upVelocity: 0
