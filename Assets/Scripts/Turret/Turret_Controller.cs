@@ -33,7 +33,39 @@ public class Turret_Controller : MonoBehaviour
     public static bool attivo = false;
 
     public GameObject player;
+    
 
+    //float xRotation, yRotation;
+
+    //public Transform orientation;
+
+    //GameManager GM;
+
+    //private void Start()
+    //{
+    //    GM = FindObjectOfType<GameManager>();
+    //}
+
+    //private void Update()
+    //{
+    //    if (GM.gameStatus == GameManager.GameStatus.gameRunning)
+    //    {
+    //        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * PlayerPrefs.GetFloat("sensX", 50f);
+    //        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * PlayerPrefs.GetFloat("sensY", 50f);
+
+    //        yRotation += mouseX;
+    //        xRotation -= mouseY;
+
+    //        xRotation = Mathf.Clamp(xRotation, -90, 90);
+    //        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+    //        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+
+    //        Cursor.lockState = CursorLockMode.Locked;
+    //        Cursor.visible = false;
+
+    //    }
+    //}
 
 
 
