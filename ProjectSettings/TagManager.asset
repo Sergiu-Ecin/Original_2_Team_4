@@ -8,6 +8,8 @@ TagManager:
   - BulletPlayer
   - EnemyAmmo
   - Torretta
+  - Spawner
+  - Arma
   layers:
   - Default
   - TransparentFX

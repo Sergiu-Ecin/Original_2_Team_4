@@ -283,12 +283,12 @@ MonoBehaviour:
   camCurXRot: 0
   lookSensitivity: 0.2
   moveSpeed: 5
-  jumpForce: 1
+  jumpForce: 5
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 55
   smoothTime: 0.5
-  money: 100
+  money: 100000
   Respawn: {fileID: 0}
 --- !u!1 &7301374628758125954
 GameObject:
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 7301374628758125956}
   - component: {fileID: 7301374628758125957}
   - component: {fileID: 7301374628758125958}
+  - component: {fileID: 1192549190}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -408,3 +409,16 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1192549190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301374628758125954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0d9bf48caa07f4c84e4f77d8ce7582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextShop: {fileID: 0}

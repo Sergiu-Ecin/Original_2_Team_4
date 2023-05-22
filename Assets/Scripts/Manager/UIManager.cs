@@ -7,14 +7,14 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI MoneyText;
 
-    Player_Controller pC;
+    InventoryManager Im;
     void Start()
     {
-        pC = FindObjectOfType<Player_Controller>();
+        Im = FindObjectOfType<InventoryManager>();
     }
 
     void Update()
     {
-        MoneyText.text = pC.money.ToString();
+        MoneyText.text = Im.money.ToString();
     }
 }

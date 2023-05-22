@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
     float precisione;
     float timer;
 
-    Player_Controller pC;
+    InventoryManager Im;
 
     [HideInInspector] public bool nord, sud, est, ovest;
     private void Start()
@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
 
         shoot = loop;
         shoot -= 2;
-        pC = FindObjectOfType<Player_Controller>();
+        Im = FindObjectOfType<InventoryManager>();
     }
 
     private void Update()
@@ -167,7 +167,7 @@ public class EnemyController : MonoBehaviour
         if (Hp <= 0)
         {
             WaveManager.enemyCount--;
-            pC.money += moneyDrop;
+            Im.money += moneyDrop;
             Destroy(gameObject);
         }
     }

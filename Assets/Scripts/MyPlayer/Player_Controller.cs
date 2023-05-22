@@ -29,8 +29,6 @@ public class Player_Controller : MonoBehaviour
     public static Vector3 playerVect;
 
 
-    [Header("shop")]
-    [SerializeField] public float money;
 
     [SerializeField] GameObject Respawn;
 
