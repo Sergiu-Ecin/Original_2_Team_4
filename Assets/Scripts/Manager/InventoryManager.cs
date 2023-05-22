@@ -114,7 +114,6 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveArmi()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-            ;
+        if (Input.GetKeyDown(KeyCode.L));
     }
 }
