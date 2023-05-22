@@ -139,7 +139,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5372410545976066057}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000043213367}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -11.31, y: 11.535, z: -4.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -161,10 +161,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.13
-  m_Radius: 0.6
+  m_Height: 2
+  m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.7
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5372410545976066162}
-  speed: 7
+  speed: 4
   gravity: -9.81
-  jump: 2
+  jump: 1.7
   groundCheck: {fileID: 3448934223565841405}
-  groundDistance: 0.4
+  groundDistance: 0.1
   groundMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 5372410546390231012}
   - component: {fileID: 5372410546390231015}
   - component: {fileID: 5372410546390231019}
+  - component: {fileID: 7301374627976202969}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -322,3 +323,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 5372410545976066060}
+--- !u!114 &7301374627976202969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372410546390231011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0d9bf48caa07f4c84e4f77d8ce7582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextShop: {fileID: 0}
