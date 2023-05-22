@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5258264924372215288}
   - component: {fileID: 7076632612630821798}
   - component: {fileID: 1861197367603666434}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8187765485710538365}
   - component: {fileID: 8187765485710538367}
   - component: {fileID: 8187765485710538366}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,8 @@ GameObject:
   - component: {fileID: 8187765486272761596}
   - component: {fileID: 8187765486272761598}
   - component: {fileID: 8187765486272761597}
-  m_Layer: 0
+  - component: {fileID: 1723992179}
+  m_Layer: 12
   m_Name: Artefatto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,3 +262,20 @@ MonoBehaviour:
   costo: 10
   artefatto: "\xE9 un arteffatto con una icona placeholder "
   DesArtefatto: {fileID: 0}
+  ArtefattoText: {fileID: 0}
+--- !u!54 &1723992179
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187765486272761595}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1

@@ -56,12 +56,18 @@ public class EnemyController : MonoBehaviour
         Im = FindObjectOfType<InventoryManager>();
     }
 
+
+    private void FixedUpdate()
+    {
+        MoveEnemy();
+        
+    }
+
     private void Update()
     {
 
         Debug.Log(target);
         Debug.Log(waypointIndex);
-        MoveEnemy();
         Cannon();
         Vita();
     }

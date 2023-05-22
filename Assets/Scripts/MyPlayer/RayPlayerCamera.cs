@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class RayPlayerCamera : MonoBehaviour
 {
-    PlayerMovement pC;
     InventoryManager iM;
 
 
     [SerializeField] GameObject TextShop;
     public static GameObject TypeArma;
+    public static int countType;
 
     void Start()
     {
-        pC = FindObjectOfType<PlayerMovement>();
         iM = FindObjectOfType<InventoryManager>();
     }
 
@@ -35,6 +34,7 @@ public class RayPlayerCamera : MonoBehaviour
                 if (hit.collider.name == "Artefatto")
                 {
                     TextShop.SetActive(true);
+                    Artefatti._ArtefattoText.SetActive(true);
                     
                     if (Input.GetKeyDown(KeyCode.F) && iM.money >= Artefatti._costo && iM.countArt > 0)
                     {
@@ -47,17 +47,48 @@ public class RayPlayerCamera : MonoBehaviour
             if (hit.collider.name == "CannoneShop")
             {
                 TextShop.SetActive(true);
-                WeaponsType._DesArmi.text = WeaponsType._armi + WeaponsType._costo;
-                if (Input.GetKeyDown(KeyCode.F) && iM.money >= WeaponsType._costo && iM.countArmi > 0)
+                CannoneShop._Text.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.F) && iM.money >= CannoneShop._costo && iM.countArmi > 0)
                 {
-                    iM.money -= WeaponsType._costo;
-                    iM.AddArma();
+                    iM.money -= CannoneShop._costo;
+                    countType = 1;
+                    iM.AddCannone();
+                }
+            }
+
+            if (hit.collider.name == "BalestraShop")
+            {
+                TextShop.SetActive(true);
+                BalestraShop._Text.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.F) && iM.money >= BalestraShop._costo && iM.countArmi > 0)
+                {
+                    iM.money -= BalestraShop._costo;
+                    countType = 2;
+                    iM.AddBalestra();
+                }
+            }
+
+            if (hit.collider.name == "CatapultaShop")
+            {
+                TextShop.SetActive(true);
+                CatapultaShop._Text.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.F) && iM.money >= CatapultaShop._costo && iM.countArmi > 0)
+                {
+                    iM.money -= CatapultaShop._costo;
+                    countType = 3;
+                    iM.AddCatapulta();
                 }
             }
 
         }
         else
+        {
             TextShop.SetActive(false);
+            Artefatti._ArtefattoText.SetActive(false);
+            CannoneShop._Text.SetActive(false);
+            BalestraShop._Text.SetActive(false);
+            CatapultaShop._Text.SetActive(false);
+        }
 
     }
 }

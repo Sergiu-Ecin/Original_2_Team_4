@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -18,9 +19,11 @@ public class InventoryManager : MonoBehaviour
     [Header("Armi")]
     [SerializeField] GameObject GridArmi;
     [SerializeField] GameObject Cannone, Balestra, Catapulta;
+    GameObject cannone, balestra, catapulta;
     [HideInInspector] public int countArmi = 4;
     public List<GameObject> ArmiLista = new List<GameObject>();
-    int index;
+    int index = 4;
+    int currentIndex;
 
 
     void Start()
@@ -86,34 +89,83 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    public void AddArma()
+    public void AddCannone()
     {
-        if (RayPlayerCamera.TypeArma.name == "Cannone")
+        for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista.Add(Cannone);
-            ArmiLista[index] = Instantiate(Cannone, GridArmi.transform); 
-            index++;
+            ArmiLista[0] = cannone;
+        }
+
+        if (RayPlayerCamera.countType == 1)
+        {
+            cannone = Instantiate(Cannone, GridArmi.transform);
+            ArmiLista.Add(cannone);
             countArmi--;
+            Debug.Log(index);
 
         }
-        if (RayPlayerCamera.TypeArma.name == "Balestra")
+    }
+
+    public void AddBalestra()
+    {
+
+        for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista.Add(Balestra);
-            ArmiLista[index] = Instantiate(Balestra, GridArmi.transform);
-            index++;
+            ArmiLista[0] = balestra;
+        }
+
+        if (RayPlayerCamera.countType == 2)
+        {
+            balestra = Instantiate(Balestra, GridArmi.transform);
+            ArmiLista.Add(balestra);
             countArmi--;
         }
-        if (RayPlayerCamera.TypeArma.name == "Catapulta")
+    }
+
+    public void AddCatapulta()
+    {
+        for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista.Add(Catapulta);
-            ArmiLista[index] = Instantiate(Catapulta, GridArmi.transform);
-            index++;
+            ArmiLista[0] = catapulta;
+        }
+
+        if (RayPlayerCamera.countType == 3)
+        {
+            catapulta = Instantiate(Catapulta, GridArmi.transform);
+            ArmiLista.Add(catapulta);
             countArmi--;
         }
     }
 
     public void RemoveArmi()
     {
-        if (Input.GetKeyDown(KeyCode.L));
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Destroy(ArmiLista[0]);
+            ArmiLista.Remove(ArmiLista[0]);
+            index--;
+            countArmi++;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Destroy(ArmiLista[1]);
+            ArmiLista.Remove(ArmiLista[1]);
+            index--;
+            countArmi++;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Destroy(ArmiLista[2]);
+            ArmiLista.Remove(ArmiLista[2]);
+            index--;
+            countArmi++;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Destroy(ArmiLista[3]);
+            ArmiLista.Remove(ArmiLista[3]);
+            index--;
+            countArmi++;
+        }
     }
 }

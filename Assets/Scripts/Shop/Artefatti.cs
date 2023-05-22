@@ -15,10 +15,13 @@ public class Artefatti : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI DesArtefatto;
 
+    [SerializeField] GameObject ArtefattoText;
+    public static GameObject _ArtefattoText;
 
     void Start()
     {
         _costo = costo;
+        _ArtefattoText = ArtefattoText;
     }
 
     void Update()
