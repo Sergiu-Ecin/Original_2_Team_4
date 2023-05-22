@@ -97,7 +97,7 @@ public class Turret_Controller : MonoBehaviour
             cameras[currentCameraIndex].gameObject.SetActive(true);
 
 
-            player.GetComponent<Player_Controller>().enabled = false;
+            player.GetComponent<PlayerMovement>().enabled = false;
               
         }
         else if (Input.GetKeyDown(KeyCode.F) && attivo == true)
@@ -120,7 +120,7 @@ public class Turret_Controller : MonoBehaviour
             // Attiva la nuova camera corrente
             cameras[currentCameraIndex].gameObject.SetActive(true);
 
-            player.GetComponent<Player_Controller>().enabled = true;
+            player.GetComponent<PlayerMovement>().enabled = true;
         }
 
     }

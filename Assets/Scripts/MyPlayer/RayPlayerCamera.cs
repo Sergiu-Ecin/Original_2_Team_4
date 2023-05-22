@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RayPlayerCamera : MonoBehaviour
 {
-    Player_Controller pC;
+    PlayerMovement pC;
     InventoryManager iM;
 
 
@@ -13,7 +13,7 @@ public class RayPlayerCamera : MonoBehaviour
 
     void Start()
     {
-        pC = FindObjectOfType<Player_Controller>();
+        pC = FindObjectOfType<PlayerMovement>();
         iM = FindObjectOfType<InventoryManager>();
     }
 

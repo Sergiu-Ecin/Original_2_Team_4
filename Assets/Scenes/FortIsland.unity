@@ -5588,12 +5588,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4293874fbdb1a7b4582a5aa5f1444dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Artefatti: []
-  Torrette: []
-  Artefatto: {fileID: 3366305971242042314, guid: f681d0a4a5065e34593520d842379791,
-    type: 3}
+  money: 0
   GridArtefatto: {fileID: 1376463948}
+  _Artefatto: {fileID: 0}
   countArt: 4
+  GridArmi: {fileID: 0}
+  Cannone: {fileID: 0}
+  Balestra: {fileID: 0}
+  Catapulta: {fileID: 0}
+  countArmi: 4
+  ArmiLista: []
 --- !u!1 &1256508433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5642,7 +5646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1258979463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11066,12 +11070,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3448934224041913651}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7301374627976202960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5372410546390231011, guid: b79e69badee6e144da169d15d29502b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3448934224041913651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &7301374627976202966 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5372410546390231013, guid: b79e69badee6e144da169d15d29502b6,
     type: 3}
   m_PrefabInstance: {fileID: 3448934224041913651}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7301374627976202969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7301374627976202960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0d9bf48caa07f4c84e4f77d8ce7582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextShop: {fileID: 0}
 --- !u!1 &7658316573459575575
 GameObject:
   m_ObjectHideFlags: 0

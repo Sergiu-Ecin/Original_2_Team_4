@@ -147,7 +147,7 @@ public class EnemyController : MonoBehaviour
 
     void Cannon()
     {
-        Cannone.transform.LookAt(Player_Controller.playerVect + Vector3.up * 10f);
+        Cannone.transform.LookAt(PlayerMovement.playerVect + Vector3.up * 10f);
 
         timer += Time.deltaTime;
         if (timer >= timeShoot && waypointIndex >= shoot)
