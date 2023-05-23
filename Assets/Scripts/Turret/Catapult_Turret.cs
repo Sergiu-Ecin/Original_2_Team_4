@@ -6,131 +6,78 @@ using UnityEngine;
 
 public class Catapult_Turret : MonoBehaviour
 {
-    public float sensibilitaMouse = 2f;
+    [Header("Camera")]
     public Transform HorizontalAxis;
     public Transform VerticalAxis;
+    public float sensibilitaMouse = 2f;
     float mouseX, mouseY;
+    public Vector2 xMinMax;
+    public Vector2 yMinMax;
 
-    [Header("Objects")]
-    [SerializeField] Transform Muzzle;
-    [SerializeField] GameObject proiettile;
-
-    [Header("Variables")]
-    [SerializeField] float fwdVelocity;
-    [SerializeField] float upVelocity;
-    [Range(0.0f, 5f)] public float timer;
-    float timeElapsed = 10f;
-
-    [Header("Danno")]
+    [Header("Shooting")]
+    [SerializeField] Transform muzzle;
+    [SerializeField] GameObject projectile;
+    [SerializeField] float shootingPower;
     [SerializeField] float danno;
-    public static float takeDanno;
+    [Range(0.0f, 5f)] public float cooldown;
+    public int munitions = 5;
+    int actualMunitions;
 
 
-
-    public Camera[] cameras;
-    private int currentCameraIndex = 0;
-
-    public static bool attivo = false;
-
-    public GameObject player;
-
-
-
+    float timeElapsed = 10f;
+    public static bool playerControl = false;
 
 
     public void Start()
     {
-        cameras[0].gameObject.SetActive(true);
-        for (int i = 1; i < cameras.Length; i++)
-        {
-            cameras[i].gameObject.SetActive(false);
-        }
 
-        takeDanno = danno;
+        actualMunitions = munitions;
 
     }
 
     public void Update()
     {
 
-        if (attivo == true)
+        mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
+        mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
+
+        mouseX = Mathf.Clamp(mouseX, xMinMax.x, xMinMax.y);
+        mouseY = Mathf.Clamp(mouseY, yMinMax.x, yMinMax.y);
+
+        HorizontalAxis.eulerAngles = new Vector3(0f, mouseY, 0f);
+        VerticalAxis.eulerAngles = new Vector3(mouseX, mouseY, 0f);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        timeElapsed += Time.deltaTime;
+        if (timeElapsed >= cooldown && actualMunitions >= 1)
         {
-
-            mouseX = Input.GetAxis("Mouse X") * sensibilitaMouse;
-            mouseY = Input.GetAxis("Mouse Y") * sensibilitaMouse;
-            HorizontalAxis.transform.Rotate(0f, mouseX, 0f);
-            VerticalAxis.transform.Rotate(-mouseY, 0f, 0f);
-
-            // Camera.main.transform.Rotate((-mouseY / 45), 0f, 0f);
-
-            timeElapsed += Time.deltaTime;
-            if (timeElapsed >= timer)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    Shoot();
-                }
+                Shoot();
+                actualMunitions--;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Recharge();
         }
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F) && attivo == false)
-        {
-
-            attivo = true;
-
-
-            cameras[currentCameraIndex].gameObject.SetActive(false);
-
-            // Incrementa l'indice della camera corrente
-            currentCameraIndex++;
-
-            // Se l'indice supera il numero di camere, torna alla prima
-            if (currentCameraIndex >= cameras.Length)
-            {
-                currentCameraIndex = 0;
-            }
-
-            // Attiva la nuova camera corrente
-            cameras[currentCameraIndex].gameObject.SetActive(true);
-
-
-           // player.GetComponent<Player_Controller>().enabled = false;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.F) && attivo == true)
-        {
-
-            attivo = false;
-
-
-            cameras[currentCameraIndex].gameObject.SetActive(false);
-
-            // Incrementa l'indice della camera corrente
-            currentCameraIndex++;
-
-            // Se l'indice supera il numero di camere, torna alla prima
-            if (currentCameraIndex >= cameras.Length)
-            {
-                currentCameraIndex = 0;
-            }
-
-            // Attiva la nuova camera corrente
-            cameras[currentCameraIndex].gameObject.SetActive(true);
-
-           // player.GetComponent<Player_Controller>().enabled = true;
-        }
-
-    }
 
     void Shoot()
     {
-        timer += Time.deltaTime;
+        cooldown += Time.deltaTime;
 
-        var bullet = Instantiate(proiettile, Muzzle.position, Muzzle.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = Muzzle.forward * fwdVelocity;
+        var bullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * shootingPower;
         timeElapsed = 0;
+    }
+
+    void Recharge()
+    {
+        actualMunitions = munitions;
     }
 }

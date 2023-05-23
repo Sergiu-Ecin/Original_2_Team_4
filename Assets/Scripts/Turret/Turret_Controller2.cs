@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Balista_Turret : MonoBehaviour
+public class Turret_Controller2 : MonoBehaviour
 {
     [Header("Camera")]
     public Transform HorizontalAxis;
@@ -16,9 +15,9 @@ public class Balista_Turret : MonoBehaviour
 
     [Header("Shooting")]
     [SerializeField] Transform muzzle;
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject munition;
     [SerializeField] float shootingPower;
-    [SerializeField] float danno;
+    [SerializeField] float damage;
     [Range(0.0f, 5f)] public float cooldown;
     public int munitions = 5;
     int actualMunitions;
@@ -27,19 +26,15 @@ public class Balista_Turret : MonoBehaviour
     float timeElapsed = 10f;
     public static bool playerControl = false;
 
-
-    public void Start()
+    private void Start()
     {
-
         actualMunitions = munitions;
-
     }
 
-    public void Update()
+    private void Update()
     {
-
         mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
-        mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
+        mouseY -= Input.GetAxis("Mouse X") * sensibilitaMouse;
 
         mouseX = Mathf.Clamp(mouseX, xMinMax.x, xMinMax.y);
         mouseY = Mathf.Clamp(mouseY, yMinMax.x, yMinMax.y);
@@ -51,27 +46,24 @@ public class Balista_Turret : MonoBehaviour
         Cursor.visible = false;
 
         timeElapsed += Time.deltaTime;
-        if (timeElapsed >= cooldown && actualMunitions >=1)
+        if (timeElapsed >= cooldown)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Shoot();
-                actualMunitions--;
             }
         }
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             Recharge();
         }
     }
 
-
     void Shoot()
     {
         cooldown += Time.deltaTime;
 
-        var bullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
+        var bullet = Instantiate(munition, muzzle.position, muzzle.rotation);
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * shootingPower;
         timeElapsed = 0;
     }
