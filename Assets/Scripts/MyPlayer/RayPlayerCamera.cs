@@ -40,6 +40,7 @@ public class RayPlayerCamera : MonoBehaviour
                     {
                         iM.money -= Artefatti._costo;
                         iM.AddArtefatto();
+                        Debug.Log("ciao");
                     }
                 }
             }

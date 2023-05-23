@@ -188,7 +188,7 @@ MonoBehaviour:
   groundDistance: 0.2
   groundMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
 --- !u!1 &5372410546390231011
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5372410546390231012}
   - component: {fileID: 5372410546390231015}
   - component: {fileID: 5372410546390231019}
-  - component: {fileID: 7301374627976202969}
+  - component: {fileID: 2089742691}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 5372410545976066060}
---- !u!114 &7301374627976202969
+--- !u!114 &2089742691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
