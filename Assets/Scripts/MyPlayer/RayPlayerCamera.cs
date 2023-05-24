@@ -27,7 +27,7 @@ public class RayPlayerCamera : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 2.5f))
+        if (Physics.Raycast(ray, out hit, 1.2f))
         {
             if (hit.transform != null)
             {
@@ -35,7 +35,10 @@ public class RayPlayerCamera : MonoBehaviour
                 {
                     TextShop.SetActive(true);
                     Artefatti._ArtefattoText.SetActive(true);
-                    
+                    CannoneShop._Text.SetActive(false);
+                    BalestraShop._Text.SetActive(false);
+                    CatapultaShop._Text.SetActive(false);
+
                     if (Input.GetKeyDown(KeyCode.F) && iM.money >= Artefatti._costo && iM.countArt > 0)
                     {
                         iM.money -= Artefatti._costo;
@@ -49,6 +52,9 @@ public class RayPlayerCamera : MonoBehaviour
             {
                 TextShop.SetActive(true);
                 CannoneShop._Text.SetActive(true);
+                BalestraShop._Text.SetActive(false);
+                CatapultaShop._Text.SetActive(false);
+                Artefatti._ArtefattoText.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.F) && iM.money >= CannoneShop._costo && iM.countArmi > 0)
                 {
                     iM.money -= CannoneShop._costo;
@@ -61,6 +67,9 @@ public class RayPlayerCamera : MonoBehaviour
             {
                 TextShop.SetActive(true);
                 BalestraShop._Text.SetActive(true);
+                Artefatti._ArtefattoText.SetActive(false);
+                CannoneShop._Text.SetActive(false);
+                CatapultaShop._Text.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.F) && iM.money >= BalestraShop._costo && iM.countArmi > 0)
                 {
                     iM.money -= BalestraShop._costo;
@@ -73,6 +82,9 @@ public class RayPlayerCamera : MonoBehaviour
             {
                 TextShop.SetActive(true);
                 CatapultaShop._Text.SetActive(true);
+                Artefatti._ArtefattoText.SetActive(false);
+                CannoneShop._Text.SetActive(false);
+                BalestraShop._Text.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.F) && iM.money >= CatapultaShop._costo && iM.countArmi > 0)
                 {
                     iM.money -= CatapultaShop._costo;
@@ -82,14 +94,7 @@ public class RayPlayerCamera : MonoBehaviour
             }
 
         }
-        else
-        {
-            TextShop.SetActive(false);
-            Artefatti._ArtefattoText.SetActive(false);
-            CannoneShop._Text.SetActive(false);
-            BalestraShop._Text.SetActive(false);
-            CatapultaShop._Text.SetActive(false);
-        }
+        
 
     }
 }

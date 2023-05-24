@@ -251,7 +251,7 @@ public class Turret_Controller : MonoBehaviour
 
     }
 
-    public void Update()
+    public void LateUpdate()
     {
        
 

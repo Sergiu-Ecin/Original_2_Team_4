@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
     [HideInInspector] public int loop;
-    int shoot;
     Transform target;
     int waypointIndex;
 
@@ -51,16 +50,14 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        shoot = loop;
-        shoot -= 2;
         Im = FindObjectOfType<InventoryManager>();
     }
 
 
     private void FixedUpdate()
     {
-        MoveEnemy();
-        
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            MoveEnemy();
     }
 
     private void Update()
@@ -156,7 +153,7 @@ public class EnemyController : MonoBehaviour
         Cannone.transform.LookAt(PlayerMovement.playerVect + Vector3.up * 10f);
 
         timer += Time.deltaTime;
-        if (timer >= timeShoot && waypointIndex >= shoot)
+        if (timer >= timeShoot && waypointIndex >= loop)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
             PallaDiCannone pDC = proiettile.GetComponent<PallaDiCannone>();

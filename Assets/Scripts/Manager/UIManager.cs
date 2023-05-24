@@ -2,19 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static GameManager;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI MoneyText;
+    [SerializeField] public GameObject Pausa;
 
-    InventoryManager Im;
-    void Start()
+
+    private void Awake()
     {
-        Im = FindObjectOfType<InventoryManager>();
+
+
     }
-
-    void Update()
+    private void Update()
     {
-        MoneyText.text = Im.money.ToString();
+
+
+        PausaOn();
+
+
+    }
+    void PausaOn()
+    {
+
+        if (Input.GetKeyDown("escape") && GameManager.gameStatus == GameStatus.gameRunning)
+        {
+            GameManager.gameStatus = GameStatus.gamePaused;
+            Pausa.SetActive(true);
+        }
+        else if (Input.GetKeyDown("escape") && GameManager.gameStatus == GameStatus.gamePaused)
+        {
+            GameManager.gameStatus = GameStatus.gameRunning;
+            Pausa.SetActive(false);
+        }
     }
 }
