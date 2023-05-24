@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Catapult_Turret : MonoBehaviour
 {
+    [Header("Vita")]
+    [SerializeField] float Hp;
+
     [Header("Camera")]
     public Transform HorizontalAxis;
     public Transform VerticalAxis;
@@ -18,21 +21,23 @@ public class Catapult_Turret : MonoBehaviour
     [SerializeField] Transform muzzle;
     [SerializeField] GameObject projectile;
     [SerializeField] float shootingPower;
-    [SerializeField] float danno;
     [Range(0.0f, 5f)] public float cooldown;
     public int munitions = 5;
     int actualMunitions;
 
 
+    [Header("Danno")]
+    [SerializeField] float danno;
+    public static float takeDanno;
+
     float timeElapsed = 10f;
     public static bool playerControl = false;
 
-
+    AudioSource catapulta;
     public void Start()
     {
-
         actualMunitions = munitions;
-
+        
     }
 
     public void Update()
@@ -55,6 +60,7 @@ public class Catapult_Turret : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                Audiomanager.catapulta.Play();
                 Shoot();
                 actualMunitions--;
             }
@@ -70,7 +76,7 @@ public class Catapult_Turret : MonoBehaviour
     void Shoot()
     {
         cooldown += Time.deltaTime;
-
+        takeDanno = danno;
         var bullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * shootingPower;
         timeElapsed = 0;
@@ -79,5 +85,14 @@ public class Catapult_Turret : MonoBehaviour
     void Recharge()
     {
         actualMunitions = munitions;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyAmmo")
+        {
+            Hp -= EnemyController.takeDanno;
+            Destroy(other.gameObject);
+        }
     }
 }

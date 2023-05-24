@@ -93,8 +93,13 @@ public class RayPlayerCamera : MonoBehaviour
                 }
             }
 
+
         }
-        
+        else
+        {
+            TextShop.SetActive(false);
+        }
+
 
     }
 }

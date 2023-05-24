@@ -7,6 +7,10 @@ using static GameManager;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI MoneyText;
+    InventoryManager Im;
+
+
     [SerializeField] public GameObject Pausa;
     [SerializeField] public GameObject Comandi;
     //[SerializeField] public GameObject End;
@@ -16,10 +20,11 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
 
-
+        Im = FindObjectOfType<InventoryManager>();
     }
     private void Update()
     {
+        MoneyText.text = Im.money.ToString();
         if (opzioni == false)
         {
             PausaOn();

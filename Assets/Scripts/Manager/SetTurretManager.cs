@@ -19,7 +19,6 @@ public class SetTurretManager : MonoBehaviour
     void Update()
     {
         rb = GetComponent<Rigidbody>();
-        Debug.Log(InventoryManager.TypeArma);
         if (Input.GetKeyDown(KeyCode.L))
         {
             Destroy(arm);

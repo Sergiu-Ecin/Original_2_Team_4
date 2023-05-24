@@ -24,6 +24,9 @@ public class EnemyController : MonoBehaviour
     float precisione;
     float timer;
 
+    [SerializeField] float danno;
+    public static float takeDanno;
+
     InventoryManager Im;
 
     [HideInInspector] public bool nord, sud, est, ovest;
@@ -49,6 +52,10 @@ public class EnemyController : MonoBehaviour
             target = SpawnerEnemyE.pointsE[0];
 
         }
+
+
+        takeDanno = danno;
+
 
         Im = FindObjectOfType<InventoryManager>();
     }
@@ -180,7 +187,14 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "BulletPlayer")
         {
-            Hp -= Turret_Controller.takeDanno;
+            Hp -= Turret_Controller2.takeDanno;
+            Destroy(other.gameObject);
+            Debug.Log("Hp " + Hp);
+        }
+
+        if (other.gameObject.tag == "BulletPlayer")
+        {
+            Hp -= Catapult_Turret.takeDanno;
             Destroy(other.gameObject);
             Debug.Log("Hp " + Hp);
         }
