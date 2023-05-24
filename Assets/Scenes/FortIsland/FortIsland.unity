@@ -3338,7 +3338,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &535149210
 GameObject:
@@ -7138,7 +7138,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1191771805
 GameObject:
@@ -7698,7 +7698,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1256508433
 GameObject:
@@ -9016,8 +9016,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 168768584, guid: d0e8768c7a4891944a3a1ce039ccf5e3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0e8768c7a4891944a3a1ce039ccf5e3, type: 3}
 --- !u!1 &1489611038
 GameObject:
@@ -10751,8 +10750,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannoneShop
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1990874807, guid: 20e45e5beb212d9418cabc6b94ce68fd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20e45e5beb212d9418cabc6b94ce68fd, type: 3}
 --- !u!1 &1764273376
 GameObject:
@@ -12852,8 +12850,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2103655860, guid: fd4df55138dfc904bb1c2ce17a86803d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4df55138dfc904bb1c2ce17a86803d, type: 3}
 --- !u!1001 &2026419930
 PrefabInstance:
@@ -13923,6 +13920,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450653474914437}
     m_Modifications:
+    - target: {fileID: 1919270793888532717, guid: 368cbdc69026c3c4aa7fbbf12d13f1a9,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8187765486272761595, guid: 368cbdc69026c3c4aa7fbbf12d13f1a9,
         type: 3}
       propertyPath: m_Name
