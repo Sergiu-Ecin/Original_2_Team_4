@@ -10,6 +10,7 @@ TagManager:
   - Torretta
   - Spawner
   - Arma
+  - Piedistallo
   layers:
   - Default
   - TransparentFX

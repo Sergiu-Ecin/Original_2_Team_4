@@ -22,10 +22,13 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject GridArmi;
     [SerializeField] GameObject Cannone, Balestra, Catapulta;
     GameObject cannone, balestra, catapulta;
+    [SerializeField] GameObject cannoneArma, balestraArma, catapultaArma;
     public static GameObject TypeArma;
     [HideInInspector] public int countArmi = 4;
     public List<GameObject> ArmiLista = new List<GameObject>();
-    int index = 4;
+    [HideInInspector]
+    public List<GameObject> ArmiListaObj = new List<GameObject>();
+    int index;
 
 
     void Start()
@@ -78,15 +81,18 @@ public class InventoryManager : MonoBehaviour
     {
         for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista[0] = cannone;
+            ArmiLista[0] = cannoneArma;
+            ArmiListaObj[0] = cannone;
         }
 
         if (RayPlayerCamera.countType == 1)
         {
             cannone = Instantiate(Cannone, GridArmi.transform);
-            ArmiLista.Add(cannone);
+            ArmiLista.Add(cannoneArma);
+            ArmiListaObj.Add(cannone);
             countArmi--;
-            Debug.Log(index);
+            Debug.Log("ciao" + ArmiLista[0]);
+            Debug.Log(ArmiListaObj[0]);
 
         }
     }
@@ -96,13 +102,15 @@ public class InventoryManager : MonoBehaviour
 
         for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista[0] = balestra;
+            ArmiLista[0] = balestraArma;
+            ArmiListaObj[0] = balestra;
         }
 
         if (RayPlayerCamera.countType == 2)
         {
             balestra = Instantiate(Balestra, GridArmi.transform);
-            ArmiLista.Add(balestra);
+            ArmiLista.Add(balestraArma);
+            ArmiListaObj.Add(balestra);
             countArmi--;
         }
     }
@@ -111,13 +119,15 @@ public class InventoryManager : MonoBehaviour
     {
         for (index = 0; index < ArmiLista.Count - 4; index++)
         {
-            ArmiLista[0] = catapulta;
+            ArmiLista[0] = catapultaArma;
+            ArmiListaObj[0] = catapulta;
         }
 
         if (RayPlayerCamera.countType == 3)
         {
             catapulta = Instantiate(Catapulta, GridArmi.transform);
-            ArmiLista.Add(catapulta);
+            ArmiLista.Add(catapultaArma);
+            ArmiListaObj.Add(catapulta);
             countArmi--;
         }
     }
@@ -128,64 +138,101 @@ public class InventoryManager : MonoBehaviour
         {
             index--;
             countArmi++;
-            TypeArma = ArmiLista[0];
             Debug.Log(TypeArma);
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Destroy(ArmiLista[0]);
-                ArmiLista.Remove(ArmiLista[0]);
-            }
+            Destroy(ArmiListaObj[0]);
+            ArmiLista.Remove(ArmiLista[0]);
+            ArmiListaObj.Remove(ArmiListaObj[0]);
+
 
         }
+
         if (switchCount == 2)
         {
             index--;
             countArmi++;
-            TypeArma = ArmiLista[1];
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Destroy(ArmiLista[1]);
-                ArmiLista.Remove(ArmiLista[1]);
-            }
+
+            Destroy(ArmiLista[1]);
+            Destroy(ArmiListaObj[1]);
+            ArmiLista.Remove(ArmiLista[1]);
+            ArmiListaObj.Remove(ArmiListaObj[1]);
+
             Debug.Log(TypeArma);
         }
+
         if (switchCount == 3)
         {
             Destroy(ArmiLista[2]);
 
             index--;
             countArmi++;
-            TypeArma = ArmiLista[2];
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Destroy(ArmiLista[2]);
-                ArmiLista.Remove(ArmiLista[2]);
-            }
+
+            Destroy(ArmiLista[2]);
+            Destroy(ArmiListaObj[2]);
+            ArmiLista.Remove(ArmiLista[2]);
+            ArmiListaObj.Remove(ArmiListaObj[2]);
+
         }
+
         if (switchCount == 4)
         {
             index--;
             countArmi++;
-            TypeArma = ArmiLista[3];
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Destroy(ArmiLista[3]);
-                ArmiLista.Remove(ArmiLista[3]);
-            }
+
+            Destroy(ArmiLista[3]);
+            Destroy(ArmiListaObj[3]);
+            ArmiLista.Remove(ArmiLista[3]);
+            ArmiListaObj.Remove(ArmiListaObj[3]);
+
         }
 
     }
 
-    int switchCount;
+    int switchCount = 1;
     void Switch()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+
             switchCount = 1;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+
             switchCount = 2;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+
             switchCount = 3;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+
             switchCount = 4;
+        }
+
+        if (countArmi < 4 )
+        {
+
+            if (switchCount == 1)
+            {
+                TypeArma = ArmiLista[0];
+            }
+
+            if (switchCount == 2)
+            {
+                TypeArma = ArmiLista[1];
+            }
+
+            if (switchCount == 3)
+            {
+                TypeArma = ArmiLista[2];
+            }
+
+            if (switchCount == 4)
+            {
+                TypeArma = ArmiLista[3];
+            }
+        }
     }
 }

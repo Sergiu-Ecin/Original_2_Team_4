@@ -3233,8 +3233,15 @@ MonoBehaviour:
     type: 3}
   Catapulta: {fileID: 8562058273128106576, guid: 4160e902bf58ede4a97627e20e93a8fe,
     type: 3}
+  cannoneArma: {fileID: 1586001157102867099, guid: ce26e96d038e5ee4698d1b343ba4278d,
+    type: 3}
+  balestraArma: {fileID: 4958508590910687976, guid: 2ae1021e63b2b9743a8ba2c751270c3d,
+    type: 3}
+  catapultaArma: {fileID: 2946959945961553170, guid: bbc47fa903fb37e429c38f9c6eae7e58,
+    type: 3}
   countArmi: 4
   ArmiLista: []
+  ArmiListaObj: []
 --- !u!1 &566275230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12884,6 +12891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1184593033, guid: b79e69badee6e144da169d15d29502b6, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 2089742691, guid: b79e69badee6e144da169d15d29502b6, type: 3}
       propertyPath: TextShop
       value: 

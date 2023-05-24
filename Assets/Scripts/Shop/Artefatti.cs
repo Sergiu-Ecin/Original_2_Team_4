@@ -18,16 +18,27 @@ public class Artefatti : MonoBehaviour
     [SerializeField] GameObject ArtefattoText;
     public static GameObject _ArtefattoText;
 
+    [SerializeField] float buffDanno;
+    [SerializeField] float buffShootingPower;
+    [SerializeField] float buffCooldownShoot;
+
+    public static float _buffDanno;
+    public static float _buffShootingPower;
+    public static float _buffCooldownShoot;
+
     void Start()
     {
         _costo = costo;
         _ArtefattoText = ArtefattoText;
-    }
+        _buffDanno = buffDanno;
+        _buffCooldownShoot = buffCooldownShoot;
+        _buffShootingPower = buffShootingPower;
 
-    void Update()
-    {
-        transform.Rotate(0, 2, 0);
-        DesArtefatto.text = artefatto + costo;
-    }
+        void Update()
+        {
+            transform.Rotate(0, 2, 0);
+            DesArtefatto.text = artefatto + costo;
+        }
 
+    }
 }
