@@ -926,7 +926,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2946959945961553170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79eaf41613d44d4cbcaca4d887e8424, type: 3}
   m_Name: 
@@ -934,13 +934,14 @@ MonoBehaviour:
   HorizontalAxis: {fileID: 6399846969863322308}
   VerticalAxis: {fileID: 4829433993924565244}
   sensibilitaMouse: 2
-  xMinMax: {x: 0, y: 0}
-  yMinMax: {x: 0, y: 0}
-  muzzle: {fileID: 0}
-  projectile: {fileID: 0}
-  shootingPower: 0
-  danno: 5
-  cooldown: 0
+  xMinMax: {x: -20, y: 60}
+  yMinMax: {x: -60, y: 60}
+  muzzle: {fileID: 6695220238871355039}
+  projectile: {fileID: 3156401682819998491, guid: 0d118c8b10984f641aa79f01308b6b53,
+    type: 3}
+  shootingPower: 15
+  danno: 20
+  cooldown: 1
   munitions: 5
 --- !u!4 &4829433993924565244 stripped
 Transform:
@@ -951,6 +952,12 @@ Transform:
 --- !u!4 &6399846969863322308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6472585330365930557, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+    type: 3}
+  m_PrefabInstance: {fileID: 73162576737707769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6695220238871355039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6767185846197254246, guid: 4aabc8ed01b1edc4da45fa07ee695035,
     type: 3}
   m_PrefabInstance: {fileID: 73162576737707769}
   m_PrefabAsset: {fileID: 0}
