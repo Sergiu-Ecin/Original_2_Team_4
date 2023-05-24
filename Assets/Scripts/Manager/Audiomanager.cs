@@ -15,10 +15,14 @@ public class Audiomanager : MonoBehaviour
     public AudioSource sottofondo;
     void Start()
     {
-        cannone = _cannone;
-        balestra = _balestra;
-        catapulta = _catapulta;
-        sottofondo.Play();
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        {
+            cannone = _cannone;
+            balestra = _balestra;
+            catapulta = _catapulta;
+            sottofondo.Play();
+
+        }
     }
 
 }

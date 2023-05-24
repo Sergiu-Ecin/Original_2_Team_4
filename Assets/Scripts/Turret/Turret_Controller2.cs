@@ -41,7 +41,8 @@ public class Turret_Controller2 : MonoBehaviour
 
     private void Update()
     {
-        visualeMouse();
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            visualeMouse();
         if(Hp <= 0)
         {
             Destroy(gameObject);

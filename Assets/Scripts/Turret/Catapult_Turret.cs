@@ -37,12 +37,20 @@ public class Catapult_Turret : MonoBehaviour
     public void Start()
     {
         actualMunitions = munitions;
-        
+
     }
 
     public void Update()
     {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            TelecameraMove();
 
+        if (Hp <= 0)
+            Destroy(gameObject);
+    }
+
+    void TelecameraMove()
+    {
         mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
         mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
 
@@ -71,7 +79,6 @@ public class Catapult_Turret : MonoBehaviour
             Recharge();
         }
     }
-
 
     void Shoot()
     {

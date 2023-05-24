@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
+    public static float _moneyDrop;
     [HideInInspector] public int loop;
     Transform target;
     int waypointIndex;
@@ -53,7 +54,7 @@ public class EnemyController : MonoBehaviour
 
         }
 
-
+        moneyDrop = _moneyDrop;
         takeDanno = danno;
 
 

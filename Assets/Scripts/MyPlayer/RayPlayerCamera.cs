@@ -10,6 +10,7 @@ public class RayPlayerCamera : MonoBehaviour
     [SerializeField] GameObject TextShop;
     public static GameObject TypeArma;
     public static int countType;
+    [HideInInspector] public bool wave;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class RayPlayerCamera : MonoBehaviour
 
     void Update()
     {
-        ShopObj();
+        if (wave == false)
+            ShopObj();
     }
 
     void ShopObj()
@@ -99,6 +101,7 @@ public class RayPlayerCamera : MonoBehaviour
         {
             TextShop.SetActive(false);
         }
+
 
 
     }
