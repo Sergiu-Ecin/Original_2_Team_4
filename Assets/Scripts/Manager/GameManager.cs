@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 
     public static GameStatus gameStatus = GameStatus.gameRunning;
 
-    UIManager UI;
 
     void Update()
     {
@@ -26,11 +25,11 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        gameStatus = GameManager.GameStatus.gameRunning;
+        gameStatus = GameStatus.gameRunning;
         SceneManager.LoadScene("FortIsland", LoadSceneMode.Single);
     }
 
-    public void Exit()
+    public static void Exit()
     {
         Application.Quit();
     }
