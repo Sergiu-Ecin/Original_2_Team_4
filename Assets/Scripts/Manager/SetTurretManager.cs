@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SetTurretManager : MonoBehaviour
 {
     InventoryManager iM;
     GameObject arm;
-    bool off;
+    public bool off;
+
+    Rigidbody rb;
     void Start()
     {
         iM = FindObjectOfType<InventoryManager>();
@@ -15,6 +18,7 @@ public class SetTurretManager : MonoBehaviour
 
     void Update()
     {
+        rb = GetComponent<Rigidbody>();
         Debug.Log(InventoryManager.TypeArma);
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -28,6 +32,7 @@ public class SetTurretManager : MonoBehaviour
         {
             arm = Instantiate(InventoryManager.TypeArma);
             arm.transform.position = transform.position;
+            arm.transform.rotation = transform.rotation;
             iM.RemoveArmi();
             off = true;
             Debug.Log("ciao");

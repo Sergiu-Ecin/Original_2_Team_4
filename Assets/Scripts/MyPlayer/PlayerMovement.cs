@@ -28,7 +28,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         playerVect = transform.position;
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            PlayerMove();
+    }
 
+    void PlayerMove()
+    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (controller.isGrounded && velocity.y < 0)
