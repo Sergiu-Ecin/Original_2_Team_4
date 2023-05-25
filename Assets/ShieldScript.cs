@@ -6,7 +6,7 @@ public class ShieldScript : MonoBehaviour
 {
     public int vitaMax = 10;
     private int vitaAttuale;
-
+    
     [SerializeField] public GameObject shieldFull;
     [SerializeField] public GameObject shieldMid;
     [SerializeField] public GameObject shieldDown;
@@ -34,25 +34,11 @@ public class ShieldScript : MonoBehaviour
         
     }
 
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    PlayerMovement player = other.GetComponent<PlayerMovement>();
-    //    if (player != null)
-    //    {
-    //        RimuoviVita();
-    //    }
-    //}
+
 
     public void OnTriggerStay(Collider other)
     {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
-
-        if (player != null && Input.GetKeyDown(KeyCode.N))
-        {
-            RimuoviVita();
-            Debug.Log("Hai danneggiato");
-
-        }
         if(player != null && Input.GetKeyDown(KeyCode.M))
         {
             Ripara();
@@ -60,6 +46,16 @@ public class ShieldScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyAmmo")
+        {
+            RimuoviVita();
+            Debug.Log("Scudo danneggiato");
+            
+
+        }
+    }
 
 
 
