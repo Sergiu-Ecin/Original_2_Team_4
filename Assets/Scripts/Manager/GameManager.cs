@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     public static GameStatus gameStatus = GameStatus.gameRunning;
 
-
     void Start()
     {
         currentHealth = baseHealth;
@@ -29,7 +28,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         slider.value = currentHealth;
-
+        if (currentHealth <= 0)
+            EndGame();
     }
 
 
@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void EndGame()
+    public static void EndGame()
     {
         gameStatus = GameStatus.gameEnd;
+        UIManager.gameOver.SetActive(true);
     }
 
 

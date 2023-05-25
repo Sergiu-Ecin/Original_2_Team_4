@@ -59,6 +59,7 @@ public class WaveManager : MonoBehaviour
             timerSpawner = timeSpawn;
             EnemyController.takeDanno += DannoEnemy;
             iM.money += MoneyEndWave;
+            UIManager.score += MoneyEndWave;
             EnemyController._moneyDrop += MoneyDropEnemy;
             timeNextWave += TimeNextWave;
             rPC.wave = false;
