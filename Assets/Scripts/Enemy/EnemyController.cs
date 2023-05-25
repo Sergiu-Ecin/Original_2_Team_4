@@ -10,7 +10,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
+    [SerializeField] float scoreDrop;
     public static float _moneyDrop;
+    public static float _score;
     [HideInInspector] public int loop;
     Transform target;
     int waypointIndex;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Transform Fire;
     [SerializeField] GameObject Proiettile, Cannone;
     [SerializeField] float timeShoot, velocit‡Palla;
+
     [Header("+precisione-")]
     [SerializeField]
     [Range(2f, 3f)]
@@ -54,6 +57,7 @@ public class EnemyController : MonoBehaviour
 
         }
 
+        
         moneyDrop = _moneyDrop;
         takeDanno = danno;
 
@@ -189,15 +193,15 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "BulletPlayer")
         {
             Hp -= Turret_Controller2.takeDanno;
+            UIManager.score += scoreDrop;
             Destroy(other.gameObject);
-            Debug.Log("Hp " + Hp);
         }
 
         if (other.gameObject.tag == "BulletPlayer")
         {
             Hp -= Catapult_Turret.takeDanno;
+            UIManager.score += scoreDrop;
             Destroy(other.gameObject);
-            Debug.Log("Hp " + Hp);
         }
     }
 }

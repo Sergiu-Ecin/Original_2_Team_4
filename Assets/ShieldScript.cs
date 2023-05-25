@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class ShieldScript : MonoBehaviour
 {
-    public int vitaMax = 10;
-    private int vitaAttuale;
-    
+    public float vitaMax = 10;
+    private float vitaAttuale;
+    [SerializeField] float costoMet‡Vita;
+    [SerializeField] float costoFullVita;
+    bool rotto;
+
     [SerializeField] public GameObject shieldFull;
     [SerializeField] public GameObject shieldMid;
     [SerializeField] public GameObject shieldDown;
 
+    InventoryManager iM;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,39 +25,39 @@ public class ShieldScript : MonoBehaviour
 
         vitaAttuale = vitaMax;
 
-        
+        iM = FindObjectOfType<InventoryManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
-       
-        
-           
-        
+
+
+
+
+
     }
 
-
-
-    public void OnTriggerStay(Collider other)
+    private void OnMouseOver()
     {
-        PlayerMovement player = other.GetComponent<PlayerMovement>();
-        if(player != null && Input.GetKeyDown(KeyCode.M))
+        if (rotto == true && Input.GetKeyDown(KeyCode.E))
         {
             Ripara();
+            vitaAttuale += 5f;
             Debug.Log("Hai riparato");
+
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyAmmo")
+        if (other.gameObject.tag == "EnemyAmmo" && rotto == false)
         {
             RimuoviVita();
+            Destroy(other.gameObject);
             Debug.Log("Scudo danneggiato");
-            
+
 
         }
     }
@@ -61,16 +66,16 @@ public class ShieldScript : MonoBehaviour
 
     public void RimuoviVita()
     {
-       
-        
-         vitaAttuale -= 2;
 
-        if(vitaAttuale == 10)
+
+        vitaAttuale -= 2;
+
+        if (vitaAttuale == 10)
         {
             shieldFull.SetActive(true);
             shieldMid.SetActive(false);
             shieldDown.SetActive(false);
-            Debug.Log("La vita attuale Ë di: " +  vitaAttuale);
+            Debug.Log("La vita attuale Ë di: " + vitaAttuale);
         }
         if (vitaAttuale == 4)
         {
@@ -79,34 +84,36 @@ public class ShieldScript : MonoBehaviour
             shieldDown.SetActive(false);
             Debug.Log("La vita attuale Ë di: " + vitaAttuale);
         }
-        if(vitaAttuale <= 0)
+        if (vitaAttuale <= 0)
         {
             shieldFull.SetActive(false);
             shieldMid.SetActive(false);
             shieldDown.SetActive(true);
+            rotto = true;
             Debug.Log("La vita attuale Ë di: " + vitaAttuale);
         }
-        
+
     }
 
     public void Ripara()
     {
-        vitaAttuale += 5;
 
-        if (vitaAttuale <= 0)
+
+        if (vitaAttuale > 0 && iM.money >= costoMet‡Vita)
         {
-            vitaAttuale += 5;
+            iM.money -= costoMet‡Vita;
             shieldFull.SetActive(false);
             shieldMid.SetActive(true);
             shieldDown.SetActive(false);
             Debug.Log("Hai Curato di 5, la vita Ë di: " + vitaAttuale);
         }
-        else if (vitaAttuale >= 4 && vitaAttuale < 10)
+        if (vitaAttuale > 5 && vitaAttuale <= 10 && iM.money >= costoFullVita)
         {
-            vitaAttuale += 5;
+            iM.money -= costoFullVita;
             shieldFull.SetActive(true);
             shieldMid.SetActive(false);
             shieldDown.SetActive(false);
+            rotto = false;
             Debug.Log("Hai Curato di 5, la vita Ë di: " + vitaAttuale);
         }
 

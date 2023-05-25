@@ -168,6 +168,7 @@ MonoBehaviour:
   Hp: 10
   speed: 20
   moneyDrop: 5
+  scoreDrop: 10
   loop: 11
   Fire: {fileID: 7533633912214356916}
   Proiettile: {fileID: 8392502341436358615, guid: 25e66dd3cf5c6b34396a06abc7d6c0a0,
@@ -176,6 +177,7 @@ MonoBehaviour:
   timeShoot: 3
   "velocit\xE0Palla": 15
   precisione: 2
+  danno: 0
   nord: 0
   sud: 0
   est: 0
