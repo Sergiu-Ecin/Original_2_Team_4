@@ -61,7 +61,7 @@ public class Turret_Controller2 : MonoBehaviour
     void visualeMouse()
     {
         mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
-        mouseY -= Input.GetAxis("Mouse X") * sensibilitaMouse;
+        mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
 
         mouseX = Mathf.Clamp(mouseX, xMinMax.x, xMinMax.y);
         mouseY = Mathf.Clamp(mouseY, yMinMax.x, yMinMax.y);

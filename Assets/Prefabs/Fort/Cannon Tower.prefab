@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.55371
       objectReference: {fileID: 0}
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -374,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.18487561
       objectReference: {fileID: 0}
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: danno
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -444,6 +444,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
+      propertyPath: munitions
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: xMinMax.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: xMinMax.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: yMinMax.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: yMinMax.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
       propertyPath: fwdVelocity
       value: 100
       objectReference: {fileID: 0}
@@ -455,13 +480,18 @@ PrefabInstance:
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: shootingPower
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: HorizontalAxis
       value: 
       objectReference: {fileID: 7365634143079503181}
+    - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: sensibilitaMouse
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: cameras.Array.data[0]
@@ -475,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 5803322896685012106, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6472585330365930557, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
