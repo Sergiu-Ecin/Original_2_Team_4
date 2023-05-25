@@ -75,6 +75,16 @@ public class PallaDiCannone : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //if (other.gameObject.tag =="Scudo")
+        //{
+        //    ShieldScript shield = other.GetComponent<ShieldScript>();
+        //    if (shield != null)
+        //    {
+        //        shield.RimuoviVita(2);
+        //    }
+
+        //}    
     }
 
 }

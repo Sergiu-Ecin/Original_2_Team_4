@@ -15,7 +15,7 @@ public class SetTurretManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(InventoryManager.TypeArma);
+       // Debug.Log(InventoryManager.TypeArma);
         if (Input.GetKeyDown(KeyCode.L))
         {
             Destroy(arm);
