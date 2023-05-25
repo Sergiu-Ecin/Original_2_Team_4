@@ -7,7 +7,7 @@ public class ShieldScript : MonoBehaviour
 {
     public float vitaMax = 10;
     private float vitaAttuale;
-    [SerializeField] float costoMet‡Vita;
+    [SerializeField] float costoMet√†Vita;
     [SerializeField] float costoFullVita;
     bool rotto;
 
@@ -16,6 +16,9 @@ public class ShieldScript : MonoBehaviour
     [SerializeField] public GameObject shieldDown;
 
     InventoryManager iM;
+
+    Collider collider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,9 @@ public class ShieldScript : MonoBehaviour
         vitaAttuale = vitaMax;
 
         iM = FindObjectOfType<InventoryManager>();
+
+        collider = GetComponent<Collider>();
+
     }
 
     // Update is called once per frame
@@ -75,14 +81,14 @@ public class ShieldScript : MonoBehaviour
             shieldFull.SetActive(true);
             shieldMid.SetActive(false);
             shieldDown.SetActive(false);
-            Debug.Log("La vita attuale Ë di: " + vitaAttuale);
+            Debug.Log("La vita attuale ÔøΩ di: " + vitaAttuale);
         }
         if (vitaAttuale == 4)
         {
             shieldFull.SetActive(false);
             shieldMid.SetActive(true);
             shieldDown.SetActive(false);
-            Debug.Log("La vita attuale Ë di: " + vitaAttuale);
+            Debug.Log("La vita attuale ÔøΩ di: " + vitaAttuale);
         }
         if (vitaAttuale <= 0)
         {
@@ -90,7 +96,9 @@ public class ShieldScript : MonoBehaviour
             shieldMid.SetActive(false);
             shieldDown.SetActive(true);
             rotto = true;
-            Debug.Log("La vita attuale Ë di: " + vitaAttuale);
+            Debug.Log("La vita attuale ÔøΩ di: " + vitaAttuale);
+
+            GetComponent<Collider>().isTrigger = true;
         }
 
     }
@@ -99,13 +107,14 @@ public class ShieldScript : MonoBehaviour
     {
 
 
-        if (vitaAttuale > 0 && iM.money >= costoMet‡Vita)
+        if (vitaAttuale > 0 && iM.money >= costoMet√†Vita)
         {
-            iM.money -= costoMet‡Vita;
+            iM.money -= costoMet√†Vita;
             shieldFull.SetActive(false);
             shieldMid.SetActive(true);
             shieldDown.SetActive(false);
-            Debug.Log("Hai Curato di 5, la vita Ë di: " + vitaAttuale);
+            Debug.Log("Hai Curato di 5, la vita ÔøΩ di: " + vitaAttuale);
+            GetComponent<Collider>().isTrigger = false;
         }
         if (vitaAttuale > 5 && vitaAttuale <= 10 && iM.money >= costoFullVita)
         {
@@ -114,7 +123,7 @@ public class ShieldScript : MonoBehaviour
             shieldMid.SetActive(false);
             shieldDown.SetActive(false);
             rotto = false;
-            Debug.Log("Hai Curato di 5, la vita Ë di: " + vitaAttuale);
+            Debug.Log("Hai Curato di 5, la vita ÔøΩ di: " + vitaAttuale);
         }
 
 

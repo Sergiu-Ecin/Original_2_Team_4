@@ -12,6 +12,8 @@ TagManager:
   - Arma
   - Piedistallo
   - Scudo
+  - Ballista_Bullet
+  - Catapult_Bullet
   layers:
   - Default
   - TransparentFX

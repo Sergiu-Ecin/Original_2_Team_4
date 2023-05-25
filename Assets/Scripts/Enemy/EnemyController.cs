@@ -197,11 +197,18 @@ public class EnemyController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.tag == "BulletPlayer")
+        if (other.gameObject.tag == "Catapult_Bullet")
         {
             Hp -= Catapult_Turret.takeDanno;
             UIManager.score += scoreDrop;
             Destroy(other.gameObject);
         }
+
+        //if (other.gameObject.tag == "BulletPlayer")
+        //{
+        //    Hp -= Balista_Turret.takeDanno;
+        //    UIManager.score += scoreDrop;
+        //    Destroy(other.gameObject);
+        //}
     }
 }
