@@ -3,7 +3,22 @@ guid: ebdb2fd762799a74aa79ffa52e4f2f69
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LENGO
+    second: {fileID: 2100000, guid: bbece1e10b2cc35409d7a8599956e33c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ferro
+    second: {fileID: 2100000, guid: e43970c2bf05e4440aea41c6ccddcb1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ferro2
+    second: {fileID: 2100000, guid: d79b6a5b2d4716640893919ea84a5d72, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
