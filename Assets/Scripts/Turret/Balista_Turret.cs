@@ -30,7 +30,6 @@ public class Balista_Turret : MonoBehaviour
 
     public void Start()
     {
-
         actualMunitions = munitions;
 
     }
@@ -80,5 +79,7 @@ public class Balista_Turret : MonoBehaviour
     {
         actualMunitions = munitions;
     }
+
+
 
 }

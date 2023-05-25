@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Turret_Controller2 : MonoBehaviour
 {
+    [Header("Vita")]
+    [SerializeField] float Hp;
+
+
+
     [Header("Camera")]
     public Transform HorizontalAxis;
     public Transform VerticalAxis;
@@ -17,11 +22,14 @@ public class Turret_Controller2 : MonoBehaviour
     [SerializeField] Transform muzzle;
     [SerializeField] GameObject munition;
     [SerializeField] float shootingPower;
-    [SerializeField] float damage;
     [Range(0.0f, 5f)] public float cooldown;
     public int munitions = 5;
     int actualMunitions;
 
+
+    [Header("Danno")]
+    [SerializeField] float danno;
+    public static float takeDanno;
 
     float timeElapsed = 10f;
     public static bool playerControl = false;
@@ -32,6 +40,16 @@ public class Turret_Controller2 : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            visualeMouse();
+        if(Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void visualeMouse()
     {
         mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
         mouseY -= Input.GetAxis("Mouse X") * sensibilitaMouse;
@@ -50,6 +68,7 @@ public class Turret_Controller2 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                Audiomanager.cannone.Play();
                 Shoot();
             }
         }
@@ -63,6 +82,7 @@ public class Turret_Controller2 : MonoBehaviour
     {
         cooldown += Time.deltaTime;
 
+        takeDanno = danno;
         var bullet = Instantiate(munition, muzzle.position, muzzle.rotation);
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * shootingPower;
         timeElapsed = 0;
@@ -73,4 +93,13 @@ public class Turret_Controller2 : MonoBehaviour
         actualMunitions = munitions;
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "EnemyAmmo")
+        {
+            Hp -= EnemyController.takeDanno;
+            Destroy(other.gameObject);
+        }
+    }
 }

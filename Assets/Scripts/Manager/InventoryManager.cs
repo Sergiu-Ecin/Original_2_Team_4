@@ -28,7 +28,7 @@ public class InventoryManager : MonoBehaviour
     public List<GameObject> ArmiLista = new List<GameObject>();
     [HideInInspector]
     public List<GameObject> ArmiListaObj = new List<GameObject>();
-    int index;
+    int index = 4;
 
 
     void Start()

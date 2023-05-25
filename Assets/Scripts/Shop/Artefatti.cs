@@ -34,11 +34,12 @@ public class Artefatti : MonoBehaviour
         _buffCooldownShoot = buffCooldownShoot;
         _buffShootingPower = buffShootingPower;
 
-        void Update()
-        {
-            transform.Rotate(0, 2, 0);
-            DesArtefatto.text = artefatto + costo;
-        }
 
+
+    }
+    void Update()
+    {
+        transform.Rotate(0, 2, 0);
+        DesArtefatto.text = artefatto + costo;
     }
 }

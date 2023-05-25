@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Giovanni.unity
     guid: 918a1f5cde1336e40827600b34fe2eef
+  - enabled: 1
+    path: Assets/Scenes/FortIsland/StartCanvas.unity
+    guid: 2b9fa4dbf258c83429d76ae63acea8ed
+  - enabled: 1
+    path: Assets/Scenes/FortIsland/FortIsland.unity
+    guid: 576923cbdb57c45498f7827b90c800d5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7e25dcf33a369f04384faa3c411b70a2,
       type: 2}

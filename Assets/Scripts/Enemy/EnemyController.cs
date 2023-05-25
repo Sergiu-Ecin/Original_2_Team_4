@@ -10,8 +10,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
+    public static float _moneyDrop;
     [HideInInspector] public int loop;
-    int shoot;
     Transform target;
     int waypointIndex;
 
@@ -24,6 +24,9 @@ public class EnemyController : MonoBehaviour
     [Range(2f, 3f)]
     float precisione;
     float timer;
+
+    [SerializeField] float danno;
+    public static float takeDanno;
 
     InventoryManager Im;
 
@@ -51,16 +54,18 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        shoot = loop;
-        shoot -= 2;
+        moneyDrop = _moneyDrop;
+        takeDanno = danno;
+
+
         Im = FindObjectOfType<InventoryManager>();
     }
 
 
     private void FixedUpdate()
     {
-        MoveEnemy();
-        
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            MoveEnemy();
     }
 
     private void Update()
@@ -156,7 +161,7 @@ public class EnemyController : MonoBehaviour
         Cannone.transform.LookAt(PlayerMovement.playerVect + Vector3.up * 10f);
 
         timer += Time.deltaTime;
-        if (timer >= timeShoot && waypointIndex >= shoot)
+        if (timer >= timeShoot && waypointIndex >= loop)
         {
             var proiettile = Instantiate(Proiettile, Fire.transform.position, Fire.rotation);
             PallaDiCannone pDC = proiettile.GetComponent<PallaDiCannone>();
@@ -183,7 +188,14 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "BulletPlayer")
         {
-            Hp -= Turret_Controller.takeDanno;
+            Hp -= Turret_Controller2.takeDanno;
+            Destroy(other.gameObject);
+            Debug.Log("Hp " + Hp);
+        }
+
+        if (other.gameObject.tag == "BulletPlayer")
+        {
+            Hp -= Catapult_Turret.takeDanno;
             Destroy(other.gameObject);
             Debug.Log("Hp " + Hp);
         }
