@@ -43,7 +43,13 @@ public class Catapult_Turret : MonoBehaviour
     public void Update()
     {
         if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
-            TelecameraMove();
+        {
+            TelecameraMove(); 
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+            Cursor.lockState = CursorLockMode.None;
 
         if (Hp <= 0)
             Destroy(gameObject);
@@ -60,8 +66,7 @@ public class Catapult_Turret : MonoBehaviour
         HorizontalAxis.eulerAngles = new Vector3(0f, mouseY, 0f);
         VerticalAxis.eulerAngles = new Vector3(mouseX, mouseY, 0f);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
 
         timeElapsed += Time.deltaTime;
         if (timeElapsed >= cooldown && actualMunitions >= 1)

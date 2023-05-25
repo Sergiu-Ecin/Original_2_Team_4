@@ -36,8 +36,20 @@ public class Balista_Turret : MonoBehaviour
 
     public void Update()
     {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        {
+            moveCamera();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else Cursor.lockState = CursorLockMode.None;
 
-        mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
+    }
+
+    void moveCamera()
+    {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
         mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
 
         mouseX = Mathf.Clamp(mouseX, xMinMax.x, xMinMax.y);
@@ -46,11 +58,10 @@ public class Balista_Turret : MonoBehaviour
         HorizontalAxis.eulerAngles = new Vector3(0f, mouseY, 0f);
         VerticalAxis.eulerAngles = new Vector3(mouseX, mouseY, 0f);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
 
         timeElapsed += Time.deltaTime;
-        if (timeElapsed >= cooldown && actualMunitions >=1)
+        if (timeElapsed >= cooldown && actualMunitions >= 1)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -64,8 +75,6 @@ public class Balista_Turret : MonoBehaviour
             Recharge();
         }
     }
-
-
     void Shoot()
     {
         cooldown += Time.deltaTime;

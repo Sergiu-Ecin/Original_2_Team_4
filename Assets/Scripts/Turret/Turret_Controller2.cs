@@ -42,8 +42,13 @@ public class Turret_Controller2 : MonoBehaviour
     private void Update()
     {
         if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        {
             visualeMouse();
-        if(Hp <= 0)
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else Cursor.lockState = CursorLockMode.None;
+        if (Hp <= 0)
         {
             Destroy(gameObject);
         }
@@ -60,8 +65,7 @@ public class Turret_Controller2 : MonoBehaviour
         HorizontalAxis.eulerAngles = new Vector3(0f, mouseY, 0f);
         VerticalAxis.eulerAngles = new Vector3(mouseX, mouseY, 0f);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
 
         timeElapsed += Time.deltaTime;
         if (timeElapsed >= cooldown)
@@ -96,7 +100,7 @@ public class Turret_Controller2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "EnemyAmmo")
+        if (other.gameObject.tag == "EnemyAmmo")
         {
             Hp -= EnemyController.takeDanno;
             Destroy(other.gameObject);

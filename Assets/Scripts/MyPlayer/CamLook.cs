@@ -8,16 +8,27 @@ public class CamLook : MonoBehaviour
 
     public Transform playerBody;
 
-    float xRotation = 0f;    
+    float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        {
+            cameraMoove();
+            Cursor.lockState = CursorLockMode.Locked;
+
+        }
+        else Cursor.lockState = CursorLockMode.None;
+    }
+
+    void cameraMoove()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

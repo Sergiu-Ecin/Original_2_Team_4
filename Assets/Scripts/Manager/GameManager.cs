@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
-    public int baseHealth = 100;
-    public int currentHealth;
-    public Slider slider;
+
     public enum GameStatus
     {
         gamePaused,
@@ -16,9 +15,11 @@ public class GameManager : MonoBehaviour
         gameEnd,
         gameStart,
     }
-
     public static GameStatus gameStatus = GameStatus.gameRunning;
 
+    public int baseHealth = 100;
+    public int currentHealth;
+    public Slider slider;
     void Start()
     {
         currentHealth = baseHealth;
