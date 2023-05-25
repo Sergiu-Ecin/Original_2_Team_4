@@ -10,9 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float Hp;
     [SerializeField] float speed;
     [SerializeField] float moneyDrop;
-    [SerializeField] float scoreDrop;
     public static float _moneyDrop;
-    public static float _score;
     [HideInInspector] public int loop;
     Transform target;
     int waypointIndex;
@@ -182,6 +180,7 @@ public class EnemyController : MonoBehaviour
         if (Hp <= 0)
         {
             WaveManager.enemyCount--;
+            UIManager.score += moneyDrop;
             Im.money += moneyDrop;
             Destroy(gameObject);
         }
@@ -193,14 +192,12 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "BulletPlayer")
         {
             Hp -= Turret_Controller2.takeDanno;
-            UIManager.score += scoreDrop;
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "Catapult_Bullet")
         {
             Hp -= Catapult_Turret.takeDanno;
-            UIManager.score += scoreDrop;
             Destroy(other.gameObject);
         }
 

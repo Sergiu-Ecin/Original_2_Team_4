@@ -14,12 +14,13 @@ public class UIManager : MonoBehaviour
     public static float score;
     [SerializeField] public GameObject Pausa;
     [SerializeField] public GameObject Comandi;
-    //[SerializeField] public GameObject GameOver;
+    [SerializeField] public GameObject GameOver;
 
+    public static GameObject gameOver;
     bool opzioni;
     private void Awake()
     {
-
+        gameOver = GameOver;
         Im = FindObjectOfType<InventoryManager>();
     }
     private void Update()
@@ -73,5 +74,9 @@ public class UIManager : MonoBehaviour
         Comandi.SetActive(false);
         opzioni = false;
     }
+
+
+
+    
 
 }
