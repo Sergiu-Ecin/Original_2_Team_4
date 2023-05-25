@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int baseHealth = 100;
-    public int currentHealth;
+    public float baseHealth = 100;
+    public float currentHealth;
     public Slider slider;
-    public TextMeshPro healthText;
+    public TextMeshProUGUI healthText;
     public enum GameStatus
     {
         gamePaused,
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        healthText.text = currentHealth.ToString() + " /100";
         slider.value = currentHealth;
         if (currentHealth <= 0)
             EndGame();
@@ -53,5 +54,12 @@ public class GameManager : MonoBehaviour
         UIManager.gameOver.SetActive(true);
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyAmmo")
+        {
+            baseHealth -= EnemyController.takeDanno;
+            Destroy(other.gameObject);
+        }
+    }
 }
