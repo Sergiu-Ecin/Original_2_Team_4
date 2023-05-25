@@ -7468,6 +7468,7 @@ MonoBehaviour:
   baseHealth: 100
   currentHealth: 0
   slider: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!4 &802482294
 Transform:
   m_ObjectHideFlags: 0
@@ -11525,6 +11526,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1964626643}
     m_Modifications:
+    - target: {fileID: 6902556237366291156, guid: a57f047840557cf4b9105b62c5f6c2b7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7317270812601910471, guid: a57f047840557cf4b9105b62c5f6c2b7,
         type: 3}
       propertyPath: m_RootOrder
