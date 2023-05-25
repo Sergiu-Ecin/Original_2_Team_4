@@ -201,7 +201,7 @@ public class EnemyController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        //if (other.gameObject.tag == "BulletPlayer")
+        //if (other.gameObject.tag == "Ballista_Bullet")
         //{
         //    Hp -= Balista_Turret.takeDanno;
         //    UIManager.score += scoreDrop;
