@@ -42,7 +42,11 @@ public class Balista_Turret : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        else Cursor.lockState = CursorLockMode.None;
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        } 
 
     }
 

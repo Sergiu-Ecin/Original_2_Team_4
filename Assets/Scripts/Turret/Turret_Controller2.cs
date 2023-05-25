@@ -47,7 +47,11 @@ public class Turret_Controller2 : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        else Cursor.lockState = CursorLockMode.None;
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         if (Hp <= 0)
         {
             Destroy(gameObject);

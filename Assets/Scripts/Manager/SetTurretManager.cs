@@ -27,11 +27,12 @@ public class SetTurretManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F) && off == false)
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F) && off == false && iM.countArmi < 4)
         {
             arm = Instantiate(InventoryManager.TypeArma);
             arm.transform.position = transform.position;
             arm.transform.rotation = transform.rotation;
+            InventoryManager.TypeArma = null;
             iM.RemoveArmi();
             off = true;
             Debug.Log("ciao");

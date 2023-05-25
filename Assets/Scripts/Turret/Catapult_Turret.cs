@@ -49,7 +49,11 @@ public class Catapult_Turret : MonoBehaviour
             Cursor.visible = false;
         }
         else
+        {
+
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
         if (Hp <= 0)
             Destroy(gameObject);
