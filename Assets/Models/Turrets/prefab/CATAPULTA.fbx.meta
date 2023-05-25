@@ -3,7 +3,42 @@ guid: 160645f3fae514c46894c2ddaaef64a4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FERRO_
+    second: {fileID: 2100000, guid: 8c141d127b84dae4c88da05f09d27c22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEGNO 2
+    second: {fileID: 2100000, guid: 8de7c44be461aae4fb3dd5cd61596320, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEGNO VITI
+    second: {fileID: 2100000, guid: b32fa5b9f50587944ad5c0d72ef72d85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corda
+    second: {fileID: 2100000, guid: 3171ca388693d034e8f39340e4acc46d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: legno ase girevole
+    second: {fileID: 2100000, guid: 9dfeeb4305d63ea49bb87bcdbc1d5962, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: legno base
+    second: {fileID: 2100000, guid: 303c6caa2abb63e4e864ce47a59c5306, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oro
+    second: {fileID: 2100000, guid: f4a98dc2feaa591469c9cd4562bb99d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
