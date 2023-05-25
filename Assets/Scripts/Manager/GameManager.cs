@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int baseHealth = 100;
     public int currentHealth;
     public Slider slider;
+    public TextMeshPro healthText;
     public enum GameStatus
     {
         gamePaused,
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         slider.value = currentHealth;
         if (currentHealth <= 0)
             EndGame();
+        
     }
 
 
