@@ -39,10 +39,10 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,9 +51,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -115,18 +115,223 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI Elements_ItemHolder
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 601
+        width: 568
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 77, y: 80, z: 82, w: 86}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320083e1562d38d4bb6c99079f98f149
+      internalID: -1849344396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Elements_hpBar
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1256
+        width: 1623
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 538, y: 0, z: 57, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b152eb5af42a002469b9b597fee6f89a
+      internalID: -2079583775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Elements_2
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 674
+        width: 1487
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 118, y: 223, z: 108, w: 141}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81909c99345d22947b26a6c21439998d
+      internalID: -370589655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgrade_Damage_icon
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 313
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9f1b565e9af004ab12d96abed86dca
+      internalID: -1118214036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgrade_Icon_BSpeed
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 91
+        width: 374
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446634c4d3fe039499bb2079b9e6f555
+      internalID: -1585645017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgrade_Icon_Reload
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 16
+        width: 271
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58edf295e252a5418744b4b0f2b73fa
+      internalID: 1341334484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Icon_Cannon
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 41
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10b9c5ac2de7bb429160847aeb40d64
+      internalID: 1798164459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Icon_Ballista
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 0
+        width: 337
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ded4c115e724f94594efef96849d635
+      internalID: -642270958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Icon_Catapult
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 54
+        width: 223
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a3242b045842b4399dc52a1aafe36c
+      internalID: -756111714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7a1be4c79b626674bbfde68a54e5c4d9
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI Elements_hpBar: -2079583775
+      UI Elements_2: -370589655
+      Upgrade_Damage_icon: -1118214036
+      UI Elements_4: -462460084
+      UI Elements_14: -588708411
+      Turret_Icon_Ballista: -642270958
+      UI Elements_0: -161320211
+      Turret_Icon_Catapult: -756111714
+      UI Elements_13: 1719961789
+      UI Elements_5: 1811461474
+      Turret_Icon_Cannon: 1798164459
+      UI Elements_12: -1853117331
+      Upgrade_Icon_BSpeed: -1585645017
+      UI Elements_ItemHolder: -1849344396
+      UI Elements_11: -2050136533
+      Upgrade_Icon_Reload: 1341334484
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
