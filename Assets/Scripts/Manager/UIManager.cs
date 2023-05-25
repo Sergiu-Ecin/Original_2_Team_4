@@ -8,12 +8,12 @@ using static GameManager;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI MoneyText;
+    [SerializeField] TextMeshProUGUI ScoreText;
     InventoryManager Im;
 
-
+    public static float score;
     [SerializeField] public GameObject Pausa;
     [SerializeField] public GameObject Comandi;
-    //[SerializeField] public GameObject End;
     //[SerializeField] public GameObject GameOver;
 
     bool opzioni;
@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+
+
+        ScoreText.text = score.ToString();
         MoneyText.text = Im.money.ToString();
         if (opzioni == false)
         {
