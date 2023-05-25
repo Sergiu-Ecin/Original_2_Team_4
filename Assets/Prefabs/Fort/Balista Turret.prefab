@@ -294,7 +294,7 @@ PrefabInstance:
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.838409
       objectReference: {fileID: 0}
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -304,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.661483
       objectReference: {fileID: 0}
     - target: {fileID: 3647827807482355780, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
@@ -396,6 +396,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.4380879
       objectReference: {fileID: 0}
+    - target: {fileID: 5803322896685012106, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6472585330365930557, guid: 4aabc8ed01b1edc4da45fa07ee695035,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -426,11 +431,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.96000046
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4433154494947752249, guid: 4aabc8ed01b1edc4da45fa07ee695035, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4aabc8ed01b1edc4da45fa07ee695035, type: 3}
 --- !u!4 &3400223897121074950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4757617980343090693, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+    type: 3}
+  m_PrefabInstance: {fileID: 7869602494495478019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3521725205465344357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6767185846197254246, guid: 4aabc8ed01b1edc4da45fa07ee695035,
     type: 3}
   m_PrefabInstance: {fileID: 7869602494495478019}
   m_PrefabAsset: {fileID: 0}
@@ -440,3 +452,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7869602494495478019}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4958508590910687976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3019197962260192235, guid: 4aabc8ed01b1edc4da45fa07ee695035,
+    type: 3}
+  m_PrefabInstance: {fileID: 7869602494495478019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &963476501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958508590910687976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3501e94159d891e43aac3b8feafdd32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 100
+  HorizontalAxis: {fileID: 3811540442415353150}
+  VerticalAxis: {fileID: 3400223897121074950}
+  sensibilitaMouse: 4
+  xMinMax: {x: -20, y: 50}
+  yMinMax: {x: -90, y: 90}
+  muzzle: {fileID: 3521725205465344357}
+  munition: {fileID: 7051984154254079923, guid: 506268b1f3f2d0d4387e851ddb8df343,
+    type: 3}
+  shootingPower: 100
+  cooldown: 2
+  munitions: 5
+  danno: 5
