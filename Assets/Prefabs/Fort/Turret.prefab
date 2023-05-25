@@ -86,20 +86,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3019197962260192235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54048556668c37f41ad584c2a02c22cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3501e94159d891e43aac3b8feafdd32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensibilitaMouse: 2
+  Hp: 100
   HorizontalAxis: {fileID: 6472585330365930557}
   VerticalAxis: {fileID: 4757617980343090693}
-  Muzzle: {fileID: 6767185846197254246}
-  proiettile: {fileID: 4982050621372715277, guid: 6c2acb9d67ae6a34692d9b43ac834176,
+  sensibilitaMouse: 2
+  xMinMax: {x: -120, y: 120}
+  yMinMax: {x: -20, y: 50}
+  muzzle: {fileID: 6767185846197254246}
+  munition: {fileID: 4982050621372715277, guid: 6c2acb9d67ae6a34692d9b43ac834176,
     type: 3}
-  fwdVelocity: 45
-  upVelocity: 0
-  timer: 0.5
+  shootingPower: 75
+  cooldown: 0.5
+  munitions: 1
   danno: 5
 --- !u!1 &5803322896685012106
 GameObject:

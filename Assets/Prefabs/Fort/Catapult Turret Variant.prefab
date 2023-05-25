@@ -806,7 +806,7 @@ MonoBehaviour:
     type: 3}
   shootingPower: 15
   cooldown: 1
-  munitions: 5
+  munitions: 1
   danno: 20
 --- !u!4 &4829433993924565244 stripped
 Transform:
