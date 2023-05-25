@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile_Catapult
       objectReference: {fileID: 0}
+    - target: {fileID: 4982050621372715277, guid: 6c2acb9d67ae6a34692d9b43ac834176,
+        type: 3}
+      propertyPath: m_TagString
+      value: Catapult_Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 6440503284242552645, guid: 6c2acb9d67ae6a34692d9b43ac834176,
         type: 3}
       propertyPath: m_Enabled

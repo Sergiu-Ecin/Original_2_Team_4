@@ -33,7 +33,6 @@ public class Catapult_Turret : MonoBehaviour
     float timeElapsed = 10f;
     public static bool playerControl = false;
 
-    AudioSource catapulta;
     public void Start()
     {
         actualMunitions = munitions;
