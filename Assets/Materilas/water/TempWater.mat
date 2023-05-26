@@ -126,7 +126,7 @@ Material:
     - _metallic: 0
     - _smoothness: 0.5
     - _transparency: 87.8
-    - _wave_height: 2
+    - _wave_height: 1
     - _wave_speed: 0.005
     - _wave_strenght: 50
     m_Colors:
