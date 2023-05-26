@@ -3,22 +3,7 @@ guid: 83369246837fd194fbf27229080b1f8d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grigio
-    second: {fileID: 2100000, guid: 160e443facf1c6a45aee15197f664a3b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sabbia
-    second: {fileID: 2100000, guid: b3ef2b3391c2863458c46264d7fc90c2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Verde
-    second: {fileID: 2100000, guid: 6f506644b8069114db8c74ae7a8348bc, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
