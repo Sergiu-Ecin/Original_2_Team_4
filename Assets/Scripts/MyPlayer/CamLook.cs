@@ -9,11 +9,13 @@ public class CamLook : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
+    public static bool cicciopasticcio;
+    public static Camera camer;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        camer = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -21,7 +23,11 @@ public class CamLook : MonoBehaviour
     {
         if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
         {
-            cameraMoove();
+            if (cicciopasticcio == false)
+            {
+                cameraMoove();
+            }
+
             Cursor.lockState = CursorLockMode.Locked;
 
         }
@@ -38,5 +44,7 @@ public class CamLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+
     }
 }

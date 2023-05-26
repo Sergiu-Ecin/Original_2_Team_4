@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 9045137862598902813}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 10
-  speed: 20
+  speed: 10
   moneyDrop: 5
   loop: 11
   Fire: {fileID: 7533633912214356916}
