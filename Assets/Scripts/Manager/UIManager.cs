@@ -13,15 +13,17 @@ public class UIManager : MonoBehaviour
 
     public static float score;
     [SerializeField] public GameObject Pausa;
-    [SerializeField] public GameObject Comandi;
     [SerializeField] public GameObject GameOver;
 
     public static GameObject gameOver;
     bool opzioni;
+
+    GameManager gm;
     private void Awake()
     {
         gameOver = GameOver;
         Im = FindObjectOfType<InventoryManager>();
+        gm = FindObjectOfType<GameManager>();
     }
     private void Update()
     {
@@ -37,14 +39,14 @@ public class UIManager : MonoBehaviour
     void PausaOn()
     {
 
-        if (Input.GetKeyDown("escape") && GameManager.gameStatus == GameStatus.gameRunning)
+        if (Input.GetKeyDown("escape") && gm.gameStatus == GameStatus.gameRunning)
         {
-            GameManager.gameStatus = GameStatus.gamePaused;
+            gm.gameStatus = GameStatus.gamePaused;
             Pausa.SetActive(true);
         }
-        else if (Input.GetKeyDown("escape") && GameManager.gameStatus == GameStatus.gamePaused)
+        else if (Input.GetKeyDown("escape") && gm.gameStatus == GameStatus.gamePaused)
         {
-            GameManager.gameStatus = GameStatus.gameRunning;
+            gm.gameStatus = GameStatus.gameRunning;
             Pausa.SetActive(false);
         }
     }
@@ -52,31 +54,18 @@ public class UIManager : MonoBehaviour
     public void Continua()
     {
         Pausa.SetActive(false);
-        GameManager.gameStatus = GameStatus.gameRunning;
+        gm.gameStatus = GameStatus.gameRunning;
     }
 
     public void Ricomincia()
     {
-        gameStatus = GameStatus.gameRunning;
+        gm.gameStatus = GameStatus.gameRunning;
         SceneManager.LoadScene("StartCanvas", LoadSceneMode.Single);
     }
 
-    public void ComandiB()
-    {
-        Pausa.SetActive(false);
-        Comandi.SetActive(true);
-        opzioni = true;
-    }
-
-    public void ExitComandi()
-    {
-        Pausa.SetActive(true);
-        Comandi.SetActive(false);
-        opzioni = false;
-    }
 
 
 
-    
+
 
 }

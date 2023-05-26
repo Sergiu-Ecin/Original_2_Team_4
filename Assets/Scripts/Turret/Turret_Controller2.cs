@@ -46,6 +46,7 @@ public class Turret_Controller2 : MonoBehaviour
     public static bool franco;
 
     AudioSource turret;
+    GameManager gm;
 
     private void Start()
     {
@@ -54,34 +55,22 @@ public class Turret_Controller2 : MonoBehaviour
         {
             InvokeRepeating("UpdateTarget", 0f, 0.5f);
         }
-    }
-    private void OnMouseOver()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            CamLook.camer.enabled = false;
-            AI = false;
 
-        }
-        
+        gm = FindObjectOfType<GameManager>();
     }
+  
 
     private void Update()
     {
         if (AI == false)
         {
-            if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            if (gm.gameStatus == GameManager.GameStatus.gameRunning)
                 visualeMouse();
             if (Hp <= 0)
             {
                 Destroy(gameObject);
             }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                cameraTurret.enabled = false;
-                PlayerMovement.cam.enabled = true;
-                AI = true;
-            }
+            
         }
 
 
@@ -103,7 +92,6 @@ public class Turret_Controller2 : MonoBehaviour
             }
 
             fireCountdown -= Time.deltaTime;
-            
         }
 
     }
@@ -162,18 +150,6 @@ public class Turret_Controller2 : MonoBehaviour
             Hp -= EnemyController.takeDanno;
             Destroy(other.gameObject);
         }
-
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F))
-        {
-            cameraTurret.enabled = true;
-            CamLook.cicciopasticcio = true;
-            playerControl = true;
-        }
-
 
     }
 

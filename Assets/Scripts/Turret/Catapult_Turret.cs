@@ -45,8 +45,11 @@ public class Catapult_Turret : MonoBehaviour
     public static bool playerControl = false;
 
     AudioSource catapulta;
+
+    GameManager gm;
     public void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         actualMunitions = munitions;
         if (AI == true)
         {
@@ -58,7 +61,7 @@ public class Catapult_Turret : MonoBehaviour
     {
         if (AI != true)
         {
-            if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            if (gm.gameStatus == GameManager.GameStatus.gameRunning)
                 visualeMouse();
             if (Hp <= 0)
             {

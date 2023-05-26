@@ -13,10 +13,13 @@ public class Audiomanager : MonoBehaviour
     public AudioSource _balestra;
     public AudioSource _catapulta;
     public AudioSource sottofondo;
+
+    GameManager gm;
     void Start()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
-        {
+        gm = FindObjectOfType<GameManager>();
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
+        {   
             cannone = _cannone;
             balestra = _balestra;
             catapulta = _catapulta;

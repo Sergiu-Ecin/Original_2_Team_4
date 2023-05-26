@@ -16,6 +16,8 @@ TagManager:
   - Catapult_Bullet
   - Undefined
   - Enemy
+  - Morte
+  - Fort
   layers:
   - Default
   - TransparentFX

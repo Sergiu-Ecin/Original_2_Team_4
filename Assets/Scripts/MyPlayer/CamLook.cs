@@ -12,16 +12,19 @@ public class CamLook : MonoBehaviour
     public static bool cicciopasticcio;
     public static Camera camer;
 
+    GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
         camer = GetComponent<Camera>();
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
         {
             if (cicciopasticcio == false)
             {

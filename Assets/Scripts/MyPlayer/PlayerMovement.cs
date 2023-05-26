@@ -20,19 +20,20 @@ public class PlayerMovement : MonoBehaviour
     public static Vector3 playerVect;
     public static Camera cam;
     [SerializeField] Camera camera ;
+    [SerializeField] GameObject morte;
 
-
+    GameManager gm;
     void Start()
     {
         cam = camera;
-
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         playerVect = transform.position;
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
             if (Turret_Controller2.playerControl == false)
             {
                 PlayerMove();
@@ -69,5 +70,19 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Morte")
+        {
+            transform.position = morte.transform.position;
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyAmmo")
+            gm.EndGame();
+    }
 
 }

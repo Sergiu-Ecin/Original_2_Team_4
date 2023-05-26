@@ -41,7 +41,7 @@ public class RayPlayerCamera : MonoBehaviour
                         Artefatti._ArtefattoText.SetActive(true);
                         CannoneShop._Text.SetActive(false);
                         BalestraShop._Text.SetActive(false);
-                        CatapultaShop._Text.SetActive(false);
+                      //  CatapultaShop._Text.SetActive(false);
 
                         if (Input.GetKeyDown(KeyCode.F) && iM.money >= Artefatti._costo && iM.countArt > 0)
                         {
@@ -57,7 +57,7 @@ public class RayPlayerCamera : MonoBehaviour
                     TextShop.SetActive(true);
                     CannoneShop._Text.SetActive(true);
                     BalestraShop._Text.SetActive(false);
-                    CatapultaShop._Text.SetActive(false);
+                  //  CatapultaShop._Text.SetActive(false);
                     Artefatti._ArtefattoText.SetActive(false);
                     if (Input.GetKeyDown(KeyCode.F) && iM.money >= CannoneShop._costo && iM.countArmi > 0)
                     {
@@ -73,7 +73,7 @@ public class RayPlayerCamera : MonoBehaviour
                     BalestraShop._Text.SetActive(true);
                     Artefatti._ArtefattoText.SetActive(false);
                     CannoneShop._Text.SetActive(false);
-                    CatapultaShop._Text.SetActive(false);
+                    //CatapultaShop._Text.SetActive(false);
                     if (Input.GetKeyDown(KeyCode.F) && iM.money >= BalestraShop._costo && iM.countArmi > 0)
                     {
                         iM.money -= BalestraShop._costo;
@@ -82,20 +82,20 @@ public class RayPlayerCamera : MonoBehaviour
                     }
                 }
 
-                if (hit.collider.name == "CatapultaShop")
-                {
-                    TextShop.SetActive(true);
-                    CatapultaShop._Text.SetActive(true);
-                    Artefatti._ArtefattoText.SetActive(false);
-                    CannoneShop._Text.SetActive(false);
-                    BalestraShop._Text.SetActive(false);
-                    if (Input.GetKeyDown(KeyCode.F) && iM.money >= CatapultaShop._costo && iM.countArmi > 0)
-                    {
-                        iM.money -= CatapultaShop._costo;
-                        countType = 3;
-                        iM.AddCatapulta();
-                    }
-                }
+                //if (hit.collider.name == "CatapultaShop")
+                //{
+                //    TextShop.SetActive(true);
+                //    CatapultaShop._Text.SetActive(true);
+                //    Artefatti._ArtefattoText.SetActive(false);
+                //    CannoneShop._Text.SetActive(false);
+                //    BalestraShop._Text.SetActive(false);
+                //    if (Input.GetKeyDown(KeyCode.F) && iM.money >= CatapultaShop._costo && iM.countArmi > 0)
+                //    {
+                //        iM.money -= CatapultaShop._costo;
+                //        countType = 3;
+                //        iM.AddCatapulta();
+                //    }
+                //}
 
 
             }

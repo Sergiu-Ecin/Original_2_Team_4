@@ -10,7 +10,7 @@ public class PallaDiCannone : MonoBehaviour
     float calcoloDisciesa;
     float timerParabola;
     Vector3 playerRef;
-
+    GameManager gm;
     [HideInInspector] public float precisione;
     private void Start()
     {
@@ -19,11 +19,12 @@ public class PallaDiCannone : MonoBehaviour
         dirY = parabolaY;
         dirZ = parabolaZ;
         calcoloDisciesa = parabolaY / 2f;
+        gm = FindObjectOfType<GameManager>();
     }
 
     void Update()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
             Caduta();
     }
 

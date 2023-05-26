@@ -19,10 +19,7 @@ public class SetTurretManager : MonoBehaviour
     void Update()
     {
         rb = GetComponent<Rigidbody>();
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Destroy(arm);
-        }
+       
     }
 
     private void OnTriggerStay(Collider other)

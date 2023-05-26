@@ -32,6 +32,8 @@ public class EnemyController : MonoBehaviour
     InventoryManager Im;
 
     [HideInInspector] public bool nord, sud, est, ovest;
+
+    GameManager gm;
     private void Start()
     {
         if (nord == true)
@@ -61,18 +63,19 @@ public class EnemyController : MonoBehaviour
 
 
         Im = FindObjectOfType<InventoryManager>();
+        gm = FindObjectOfType<GameManager>();
     }
 
 
     private void FixedUpdate()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
             MoveEnemy();
     }
 
     private void Update()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
         {
             Cannon();
             Vita();

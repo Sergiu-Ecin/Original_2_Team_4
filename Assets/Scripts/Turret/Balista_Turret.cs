@@ -27,16 +27,16 @@ public class Balista_Turret : MonoBehaviour
     float timeElapsed = 10f;
     public static bool playerControl = false;
 
-
+    GameManager gm;
     public void Start()
     {
         actualMunitions = munitions;
-
+        gm = FindObjectOfType<GameManager>();
     }
 
     public void Update()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        if (gm.gameStatus == GameManager.GameStatus.gameRunning)
         {
             moveCamera();
             Cursor.lockState = CursorLockMode.Locked;
@@ -46,14 +46,13 @@ public class Balista_Turret : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-        } 
+        }
 
     }
 
     void moveCamera()
     {
-        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
-            mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
+        mouseX += Input.GetAxis("Mouse Y") * sensibilitaMouse;
         mouseY += Input.GetAxis("Mouse X") * sensibilitaMouse;
 
         mouseX = Mathf.Clamp(mouseX, xMinMax.x, xMinMax.y);

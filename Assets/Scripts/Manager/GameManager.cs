@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float currentHealth;
     public Slider slider;
     public TextMeshProUGUI healthText;
+    [SerializeField]
     public enum GameStatus
     {
         gamePaused,
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
         gameStart,
     }
 
-    public static GameStatus gameStatus = GameStatus.gameRunning;
+    public GameStatus gameStatus = GameStatus.gameRunning;
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
         slider.value = currentHealth;
         if (currentHealth <= 0)
             EndGame();
-        
+
     }
 
 
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public static void EndGame()
+    public void EndGame()
     {
         gameStatus = GameStatus.gameEnd;
         UIManager.gameOver.SetActive(true);
