@@ -18,9 +18,13 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
 
     public static Vector3 playerVect;
+    public static Camera cam;
+    [SerializeField] Camera camera ;
+
 
     void Start()
     {
+        cam = camera;
 
     }
 
@@ -29,7 +33,15 @@ public class PlayerMovement : MonoBehaviour
     {
         playerVect = transform.position;
         if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
-            PlayerMove();
+            if (Turret_Controller2.playerControl == false)
+            {
+                PlayerMove();
+                cam.enabled = true;
+                
+            } else if (Turret_Controller2.playerControl == true)
+            {
+                cam.enabled = false;
+            }
     }
 
     void PlayerMove()
@@ -57,5 +69,5 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    
+
 }

@@ -189,6 +189,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  camera: {fileID: 5372410546390231013}
 --- !u!1 &5372410546390231011
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,3 +337,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextShop: {fileID: 0}
+  wave: 0

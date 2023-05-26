@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614532876814453183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42,10 +42,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3647827807482355780}
   - component: {fileID: 654853434111105738}
-  - component: {fileID: 4433154494947752249}
+  - component: {fileID: 6117272602160628328}
+  - component: {fileID: 3312675269481751329}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Torretta
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,31 +80,54 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4433154494947752249
+--- !u!111 &6117272602160628328
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019197962260192235}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 5040e6e22c6262a43ac7d70c2818436b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &3312675269481751329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3019197962260192235}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3501e94159d891e43aac3b8feafdd32e, type: 3}
+  m_Script: {fileID: 11500000, guid: a79eaf41613d44d4cbcaca4d887e8424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 100
   HorizontalAxis: {fileID: 6472585330365930557}
   VerticalAxis: {fileID: 4757617980343090693}
-  sensibilitaMouse: 2
-  xMinMax: {x: -120, y: 120}
-  yMinMax: {x: -20, y: 50}
+  cameraTurret: {fileID: 1831371244837982318}
+  sensibilitaMouse: 4
+  xMinMax: {x: -20, y: 40}
+  yMinMax: {x: -90, y: 90}
   muzzle: {fileID: 6767185846197254246}
-  munition: {fileID: 4982050621372715277, guid: 6c2acb9d67ae6a34692d9b43ac834176,
+  munition: {fileID: 3156401682819998491, guid: 0d118c8b10984f641aa79f01308b6b53,
     type: 3}
-  shootingPower: 75
-  cooldown: 0.5
-  munitions: 1
-  danno: 5
+  shootingPower: 15
+  cooldown: 3.5
+  munitions: 5
+  danno: 10
+  AI: 1
+  fireRate: 1
+  aiDamage: 2
+  turnSpeed: 4
+  range: 100
+  enemyTag: Enemy
 --- !u!1 &5803322896685012106
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4061169442240110353
 Transform:
   m_ObjectHideFlags: 0
@@ -130,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803322896685012106}
   m_LocalRotation: {x: 0.021814892, y: 0, z: 0, w: 0.999762}
-  m_LocalPosition: {x: -0, y: 0.462, z: -1.31}
+  m_LocalPosition: {x: 0, y: 0.538334, z: -3.0583344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7539354093632146480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.854, z: 0}
+  m_LocalPosition: {x: 0, y: 0.604, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -269,11 +293,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8635888196202455399}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.046, z: 0.8}
+  m_LocalRotation: {x: -0.1305255, y: -0, z: 3.5527137e-14, w: 0.991445}
+  m_LocalPosition: {x: -0, y: -0.42, z: -1.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4757617980343090693}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
