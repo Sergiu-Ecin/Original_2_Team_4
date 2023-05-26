@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -661590818169024642, guid: ce26e96d038e5ee4698d1b343ba4278d,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -661590818169024642, guid: ce26e96d038e5ee4698d1b343ba4278d,
+        type: 3}
+      propertyPath: munitions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -661590818169024642, guid: ce26e96d038e5ee4698d1b343ba4278d,
+        type: 3}
+      propertyPath: shootingPower
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 171552043019464777, guid: ce26e96d038e5ee4698d1b343ba4278d,
         type: 3}
       propertyPath: Hp

@@ -42,8 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3647827807482355780}
   - component: {fileID: 654853434111105738}
-  - component: {fileID: 6117272602160628328}
-  - component: {fileID: 3312675269481751329}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Torretta
@@ -80,54 +78,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!111 &6117272602160628328
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019197962260192235}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 5040e6e22c6262a43ac7d70c2818436b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &3312675269481751329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019197962260192235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79eaf41613d44d4cbcaca4d887e8424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hp: 100
-  HorizontalAxis: {fileID: 6472585330365930557}
-  VerticalAxis: {fileID: 4757617980343090693}
-  cameraTurret: {fileID: 1831371244837982318}
-  sensibilitaMouse: 4
-  xMinMax: {x: -20, y: 40}
-  yMinMax: {x: -90, y: 90}
-  muzzle: {fileID: 6767185846197254246}
-  munition: {fileID: 3156401682819998491, guid: 0d118c8b10984f641aa79f01308b6b53,
-    type: 3}
-  shootingPower: 15
-  cooldown: 3.5
-  munitions: 5
-  danno: 10
-  AI: 1
-  fireRate: 1
-  aiDamage: 2
-  turnSpeed: 4
-  range: 100
-  enemyTag: Enemy
 --- !u!1 &5803322896685012106
 GameObject:
   m_ObjectHideFlags: 0

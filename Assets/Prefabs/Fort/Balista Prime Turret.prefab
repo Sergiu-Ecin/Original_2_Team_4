@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: shootingPower
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 963476501, guid: 2ae1021e63b2b9743a8ba2c751270c3d, type: 3}
+      propertyPath: aiDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 963476501, guid: 2ae1021e63b2b9743a8ba2c751270c3d, type: 3}
+      propertyPath: cooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 963476501, guid: 2ae1021e63b2b9743a8ba2c751270c3d, type: 3}
+      propertyPath: munitions
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 963476501, guid: 2ae1021e63b2b9743a8ba2c751270c3d, type: 3}
+      propertyPath: shootingPower
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 185352738121480425, guid: 2ae1021e63b2b9743a8ba2c751270c3d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
