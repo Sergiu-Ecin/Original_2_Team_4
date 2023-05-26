@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        
+
         moneyDrop = _moneyDrop;
         takeDanno = danno;
 
@@ -72,11 +72,12 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+        {
+            Cannon();
+            Vita();
 
-        Debug.Log(target);
-        Debug.Log(waypointIndex);
-        Cannon();
-        Vita();
+        }
     }
 
     void MoveEnemy()

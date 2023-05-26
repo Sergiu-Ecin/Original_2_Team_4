@@ -44,6 +44,7 @@ public class WaveManager : MonoBehaviour
         {
             startWave = true;
             nextWave = true;
+            rPC.wave = true;
             Debug.Log("Startasti cumpà");
         }
     }

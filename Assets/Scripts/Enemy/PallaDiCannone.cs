@@ -23,8 +23,8 @@ public class PallaDiCannone : MonoBehaviour
 
     void Update()
     {
-
-        Caduta();
+        if (GameManager.gameStatus == GameManager.GameStatus.gameRunning)
+            Caduta();
     }
 
     private void Caduta()
@@ -61,7 +61,7 @@ public class PallaDiCannone : MonoBehaviour
             }
         }
 
-        if(-dirY < -parabolaY)
+        if (-dirY < -parabolaY)
         {
             dirY = -parabolaY;
         }
